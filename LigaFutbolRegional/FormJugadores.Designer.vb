@@ -22,6 +22,7 @@ Partial Class FormJugadores
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormJugadores))
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -30,8 +31,26 @@ Partial Class FormJugadores
         Me.cmdJugadorConsulta = New System.Windows.Forms.Button()
         Me.cmdJugadorModificar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.JugadorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.TipodocDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DniDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechanacimientoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CalleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NrocalleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodpostalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdposicionpreferenteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JugadorBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CampeonatoPavDataSet = New LigaFutbolRegional.CampeonatoPavDataSet()
+        Me.JugadorTableAdapter1 = New LigaFutbolRegional.CampeonatoPavDataSetTableAdapters.JugadorTableAdapter()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JugadorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JugadorBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CampeonatoPavDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
@@ -44,7 +63,7 @@ Partial Class FormJugadores
         Me.Panel2.Controls.Add(Me.cmdJugadorModificar)
         Me.Panel2.Location = New System.Drawing.Point(1, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(151, 423)
+        Me.Panel2.Size = New System.Drawing.Size(151, 490)
         Me.Panel2.TabIndex = 8
         '
         'PictureBox1
@@ -107,20 +126,104 @@ Partial Class FormJugadores
         Me.Panel1.BackColor = System.Drawing.Color.DarkCyan
         Me.Panel1.Location = New System.Drawing.Point(1, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(678, 109)
+        Me.Panel1.Size = New System.Drawing.Size(1089, 109)
         Me.Panel1.TabIndex = 7
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TipodocDataGridViewTextBoxColumn, Me.DniDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidoDataGridViewTextBoxColumn, Me.FechanacimientoDataGridViewTextBoxColumn, Me.CalleDataGridViewTextBoxColumn, Me.NrocalleDataGridViewTextBoxColumn, Me.CodpostalDataGridViewTextBoxColumn, Me.IdposicionpreferenteDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.JugadorBindingSource1
+        Me.DataGridView1.Location = New System.Drawing.Point(148, 104)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(942, 386)
+        Me.DataGridView1.TabIndex = 9
+        '
+        'TipodocDataGridViewTextBoxColumn
+        '
+        Me.TipodocDataGridViewTextBoxColumn.DataPropertyName = "tipo_doc"
+        Me.TipodocDataGridViewTextBoxColumn.HeaderText = "tipo_doc"
+        Me.TipodocDataGridViewTextBoxColumn.Name = "TipodocDataGridViewTextBoxColumn"
+        '
+        'DniDataGridViewTextBoxColumn
+        '
+        Me.DniDataGridViewTextBoxColumn.DataPropertyName = "dni"
+        Me.DniDataGridViewTextBoxColumn.HeaderText = "dni"
+        Me.DniDataGridViewTextBoxColumn.Name = "DniDataGridViewTextBoxColumn"
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        '
+        'ApellidoDataGridViewTextBoxColumn
+        '
+        Me.ApellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido"
+        Me.ApellidoDataGridViewTextBoxColumn.HeaderText = "apellido"
+        Me.ApellidoDataGridViewTextBoxColumn.Name = "ApellidoDataGridViewTextBoxColumn"
+        '
+        'FechanacimientoDataGridViewTextBoxColumn
+        '
+        Me.FechanacimientoDataGridViewTextBoxColumn.DataPropertyName = "fecha_nacimiento"
+        Me.FechanacimientoDataGridViewTextBoxColumn.HeaderText = "fecha_nacimiento"
+        Me.FechanacimientoDataGridViewTextBoxColumn.Name = "FechanacimientoDataGridViewTextBoxColumn"
+        '
+        'CalleDataGridViewTextBoxColumn
+        '
+        Me.CalleDataGridViewTextBoxColumn.DataPropertyName = "calle"
+        Me.CalleDataGridViewTextBoxColumn.HeaderText = "calle"
+        Me.CalleDataGridViewTextBoxColumn.Name = "CalleDataGridViewTextBoxColumn"
+        '
+        'NrocalleDataGridViewTextBoxColumn
+        '
+        Me.NrocalleDataGridViewTextBoxColumn.DataPropertyName = "nro_calle"
+        Me.NrocalleDataGridViewTextBoxColumn.HeaderText = "nro_calle"
+        Me.NrocalleDataGridViewTextBoxColumn.Name = "NrocalleDataGridViewTextBoxColumn"
+        '
+        'CodpostalDataGridViewTextBoxColumn
+        '
+        Me.CodpostalDataGridViewTextBoxColumn.DataPropertyName = "cod_postal"
+        Me.CodpostalDataGridViewTextBoxColumn.HeaderText = "cod_postal"
+        Me.CodpostalDataGridViewTextBoxColumn.Name = "CodpostalDataGridViewTextBoxColumn"
+        '
+        'IdposicionpreferenteDataGridViewTextBoxColumn
+        '
+        Me.IdposicionpreferenteDataGridViewTextBoxColumn.DataPropertyName = "id_posicion_preferente"
+        Me.IdposicionpreferenteDataGridViewTextBoxColumn.HeaderText = "id_posicion_preferente"
+        Me.IdposicionpreferenteDataGridViewTextBoxColumn.Name = "IdposicionpreferenteDataGridViewTextBoxColumn"
+        '
+        'JugadorBindingSource1
+        '
+        Me.JugadorBindingSource1.DataMember = "Jugador"
+        Me.JugadorBindingSource1.DataSource = Me.CampeonatoPavDataSet
+        '
+        'CampeonatoPavDataSet
+        '
+        Me.CampeonatoPavDataSet.DataSetName = "CampeonatoPavDataSet"
+        Me.CampeonatoPavDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'JugadorTableAdapter1
+        '
+        Me.JugadorTableAdapter1.ClearBeforeFill = True
         '
         'FormJugadores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(679, 425)
+        Me.ClientSize = New System.Drawing.Size(1089, 491)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FormJugadores"
         Me.Text = "Jugadores"
         Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JugadorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JugadorBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CampeonatoPavDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -132,4 +235,19 @@ Partial Class FormJugadores
     Friend WithEvents cmdJugadorConsulta As Button
     Friend WithEvents cmdJugadorModificar As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents JugadorBindingSource As BindingSource
+    Friend WithEvents CampeonatoPavDataSet As CampeonatoPavDataSet
+    Friend WithEvents JugadorBindingSource1 As BindingSource
+    Friend WithEvents JugadorTableAdapter1 As CampeonatoPavDataSetTableAdapters.JugadorTableAdapter
+    Friend WithEvents TipodocDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DniDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ApellidoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FechanacimientoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CalleDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NrocalleDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CodpostalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents IdposicionpreferenteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+
 End Class
