@@ -11,8 +11,9 @@
     <AssemblyName>LigaFutbolRegional</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -72,81 +73,165 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CampeonatoPavDataSet.Designer.vb">
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Clases\arbitro.vb" />
+    <Compile Include="Clases\Campeonato.vb" />
+    <Compile Include="Clases\Club.vb" />
+    <Compile Include="Clases\ComboBox_01.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Clases\inscripcion.vb" />
+    <Compile Include="Clases\MaskedTextBox_01.Designer.vb">
+      <DependentUpon>MaskedTextBox_01.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\MaskedTextBox_01.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Clases\CONEXION_BD.vb" />
+    <Compile Include="Clases\Jugador.vb" />
+    <Compile Include="Clases\tratamientos_especiales.vb" />
+    <Compile Include="DataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CampeonatoPavDataSet.xsd</DependentUpon>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CampeonatoPavDataSet1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CampeonatoPavDataSet1.xsd</DependentUpon>
+    <Compile Include="Formularios\FormActualizarArbitro.Designer.vb">
+      <DependentUpon>FormActualizarArbitro.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="Formularios\FormActualizarArbitro.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Formularios\FormActualizarCampeonato.Designer.vb">
+      <DependentUpon>FormActualizarCampeonato.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormActualizarCampeonato.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormActualizarClub.Designer.vb">
+    <Compile Include="Formularios\FormActualizarFechasYPartidos.Designer.vb">
+      <DependentUpon>FormActualizarFechasYPartidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormActualizarFechasYPartidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormCampeonatos.Designer.vb">
+      <DependentUpon>FormCampeonatos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormCampeonatos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormEliminarArbitro.Designer.vb">
+      <DependentUpon>FormEliminarArbitro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormEliminarArbitro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormEliminarCampeonato.Designer.vb">
+      <DependentUpon>FormEliminarCampeonato.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormEliminarCampeonato.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormEliminarFechaYPartido.Designer.vb">
+      <DependentUpon>FormEliminarFechaYPartido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormEliminarFechaYPartido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormFechasYPartidos.Designer.vb">
+      <DependentUpon>FormFechasYPartidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormFechasYPartidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormInscripcion.Designer.vb">
+      <DependentUpon>FormInscripcion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormInscripcion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormRegistrarArbitro.Designer.vb">
+      <DependentUpon>FormRegistrarArbitro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormRegistrarArbitro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormMenu.Designer.vb">
+      <DependentUpon>FormMenu.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormActualizarClub.Designer.vb">
       <DependentUpon>FormActualizarClub.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormActualizarClub.vb">
+    <Compile Include="Formularios\FormActualizarClub.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormClubes.Designer.vb">
+    <Compile Include="Formularios\FormClubes.Designer.vb">
       <DependentUpon>FormClubes.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormClubes.vb">
+    <Compile Include="Formularios\FormClubes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormActualizarJugador.Designer.vb">
+    <Compile Include="Formularios\FormActualizarJugador.Designer.vb">
       <DependentUpon>FormActualizarJugador.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormActualizarJugador.vb">
+    <Compile Include="Formularios\FormActualizarJugador.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEliminarClub.Designer.vb">
+    <Compile Include="Formularios\FormEliminarClub.Designer.vb">
       <DependentUpon>FormEliminarClub.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormEliminarClub.vb">
+    <Compile Include="Formularios\FormEliminarClub.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEliminarJugador.Designer.vb">
+    <Compile Include="Formularios\FormEliminarJugador.Designer.vb">
       <DependentUpon>FormEliminarJugador.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormEliminarJugador.vb">
+    <Compile Include="Formularios\FormEliminarJugador.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRegistrarClub.Designer.vb">
+    <Compile Include="Formularios\FormRegistrarCampeonato.Designer.vb">
+      <DependentUpon>FormRegistrarCampeonato.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormRegistrarCampeonato.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormRegistrarClub.Designer.vb">
       <DependentUpon>FormRegistrarClub.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormRegistrarClub.vb">
+    <Compile Include="Formularios\FormRegistrarClub.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRegistrarJugador.Designer.vb">
+    <Compile Include="Formularios\FormRegistrarFechasYPartidos.Designer.vb">
+      <DependentUpon>FormRegistrarFechasYPartidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormRegistrarFechasYPartidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormRegistrarJugador.Designer.vb">
       <DependentUpon>FormRegistrarJugador.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormRegistrarJugador.vb">
+    <Compile Include="Formularios\FormRegistrarJugador.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormArbitros.Designer.vb">
+    <Compile Include="Formularios\FormArbitros.Designer.vb">
       <DependentUpon>FormArbitros.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormArbitros.vb">
+    <Compile Include="Formularios\FormArbitros.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormJugadores.Designer.vb">
+    <Compile Include="Formularios\FormJugadores.Designer.vb">
       <DependentUpon>FormJugadores.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormJugadores.vb">
+    <Compile Include="Formularios\FormJugadores.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm1.Designer.vb">
+    <Compile Include="Formularios\LoginForm1.Designer.vb">
       <DependentUpon>LoginForm1.vb</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm1.vb">
+    <Compile Include="Formularios\LoginForm1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -164,39 +249,81 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SplashScreen1.Designer.vb">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\FormActualizarArbitro.resx">
+      <DependentUpon>FormActualizarArbitro.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormActualizarClub.resx">
+    <EmbeddedResource Include="Formularios\FormActualizarCampeonato.resx">
+      <DependentUpon>FormActualizarCampeonato.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormActualizarFechasYPartidos.resx">
+      <DependentUpon>FormActualizarFechasYPartidos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormCampeonatos.resx">
+      <DependentUpon>FormCampeonatos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormEliminarArbitro.resx">
+      <DependentUpon>FormEliminarArbitro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormEliminarCampeonato.resx">
+      <DependentUpon>FormEliminarCampeonato.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormEliminarFechaYPartido.resx">
+      <DependentUpon>FormEliminarFechaYPartido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormFechasYPartidos.resx">
+      <DependentUpon>FormFechasYPartidos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormInscripcion.resx">
+      <DependentUpon>FormInscripcion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormMenu.resx">
+      <DependentUpon>FormMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormActualizarClub.resx">
       <DependentUpon>FormActualizarClub.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormClubes.resx">
+    <EmbeddedResource Include="Formularios\FormClubes.resx">
       <DependentUpon>FormClubes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormActualizarJugador.resx">
+    <EmbeddedResource Include="Formularios\FormActualizarJugador.resx">
       <DependentUpon>FormActualizarJugador.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEliminarClub.resx">
+    <EmbeddedResource Include="Formularios\FormEliminarClub.resx">
       <DependentUpon>FormEliminarClub.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEliminarJugador.resx">
+    <EmbeddedResource Include="Formularios\FormEliminarJugador.resx">
       <DependentUpon>FormEliminarJugador.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRegistrarClub.resx">
+    <EmbeddedResource Include="Formularios\FormRegistrarArbitro.resx">
+      <DependentUpon>FormRegistrarArbitro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormRegistrarCampeonato.resx">
+      <DependentUpon>FormRegistrarCampeonato.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormRegistrarClub.resx">
       <DependentUpon>FormRegistrarClub.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRegistrarJugador.resx">
+    <EmbeddedResource Include="Formularios\FormRegistrarFechasYPartidos.resx">
+      <DependentUpon>FormRegistrarFechasYPartidos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormRegistrarJugador.resx">
       <DependentUpon>FormRegistrarJugador.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormArbitros.resx">
+    <EmbeddedResource Include="Formularios\FormArbitros.resx">
       <DependentUpon>FormArbitros.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormJugadores.resx">
+    <EmbeddedResource Include="Formularios\FormJugadores.resx">
       <DependentUpon>FormJugadores.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm1.resx">
+    <EmbeddedResource Include="Formularios\LoginForm1.resx">
       <DependentUpon>LoginForm1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -205,29 +332,21 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="CampeonatoPavDataSet.xsc">
-      <DependentUpon>CampeonatoPavDataSet.xsd</DependentUpon>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="CampeonatoPavDataSet.xsd">
+    <None Include="DataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CampeonatoPavDataSet.Designer.vb</LastGenOutput>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="CampeonatoPavDataSet.xss">
-      <DependentUpon>CampeonatoPavDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CampeonatoPavDataSet1.xsc">
-      <DependentUpon>CampeonatoPavDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="CampeonatoPavDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CampeonatoPavDataSet1.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CampeonatoPavDataSet1.xss">
-      <DependentUpon>CampeonatoPavDataSet1.xsd</DependentUpon>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -240,5 +359,6 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
