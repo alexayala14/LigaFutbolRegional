@@ -28,7 +28,6 @@ Partial Class FormRegistrarClub
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -39,7 +38,6 @@ Partial Class FormRegistrarClub
         Me.txt_nro_cuil = New LigaFutbolRegional.MaskedTextBox_01()
         Me.txt_nombre_club = New LigaFutbolRegional.MaskedTextBox_01()
         Me.txt_siglas = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.txt_id_club = New LigaFutbolRegional.MaskedTextBox_01()
         Me.SuspendLayout()
         '
         'BtnCancelar
@@ -98,15 +96,6 @@ Partial Class FormRegistrarClub
         Me.Label2.TabIndex = 21
         Me.Label2.Text = "Siglas:"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(93, 49)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(19, 13)
-        Me.Label1.TabIndex = 20
-        Me.Label1.Text = "Id:"
-        '
         'Label9
         '
         Me.Label9.AutoSize = True
@@ -137,6 +126,7 @@ Partial Class FormRegistrarClub
         'cmb_id_estado_club
         '
         Me.cmb_id_estado_club.FormattingEnabled = True
+        Me.cmb_id_estado_club.Items.AddRange(New Object() {"1", "2", "3"})
         Me.cmb_id_estado_club.Location = New System.Drawing.Point(118, 250)
         Me.cmb_id_estado_club.Name = "cmb_id_estado_club"
         Me.cmb_id_estado_club.nombre_campo = "id_estado_club"
@@ -206,17 +196,6 @@ Partial Class FormRegistrarClub
         Me.txt_siglas.TabIndex = 27
         Me.txt_siglas.validable = True
         '
-        'txt_id_club
-        '
-        Me.txt_id_club.Location = New System.Drawing.Point(118, 46)
-        Me.txt_id_club.Name = "txt_id_club"
-        Me.txt_id_club.nombre_campo = "id_club"
-        Me.txt_id_club.nombre_tabla = "ClubFutbol"
-        Me.txt_id_club.Size = New System.Drawing.Size(100, 20)
-        Me.txt_id_club.TabIndex = 26
-        Me.txt_id_club.validable = True
-        Me.txt_id_club.ValidatingType = GetType(Integer)
-        '
         'FormRegistrarClub
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -235,12 +214,10 @@ Partial Class FormRegistrarClub
         Me.Controls.Add(Me.txt_nro_cuil)
         Me.Controls.Add(Me.txt_nombre_club)
         Me.Controls.Add(Me.txt_siglas)
-        Me.Controls.Add(Me.txt_id_club)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
         Me.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
@@ -261,12 +238,10 @@ Partial Class FormRegistrarClub
     Friend WithEvents txt_nro_cuil As LigaFutbolRegional.MaskedTextBox_01
     Friend WithEvents txt_nombre_club As LigaFutbolRegional.MaskedTextBox_01
     Friend WithEvents txt_siglas As LigaFutbolRegional.MaskedTextBox_01
-    Friend WithEvents txt_id_club As LigaFutbolRegional.MaskedTextBox_01
     Friend WithEvents Label6 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label

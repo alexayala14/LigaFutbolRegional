@@ -25,7 +25,7 @@ Partial Class FormEliminarJugador
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.txt_id_club = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_dni = New LigaFutbolRegional.MaskedTextBox_01()
         Me.SuspendLayout()
         '
         'Label2
@@ -57,16 +57,16 @@ Partial Class FormEliminarJugador
         Me.BtnCancelar.Text = "Cancelar"
         Me.BtnCancelar.UseVisualStyleBackColor = True
         '
-        'txt_id_club
+        'txt_dni
         '
-        Me.txt_id_club.Location = New System.Drawing.Point(117, 36)
-        Me.txt_id_club.Name = "txt_id_club"
-        Me.txt_id_club.nombre_campo = Nothing
-        Me.txt_id_club.nombre_tabla = Nothing
-        Me.txt_id_club.Size = New System.Drawing.Size(100, 20)
-        Me.txt_id_club.TabIndex = 43
-        Me.txt_id_club.validable = False
-        Me.txt_id_club.ValidatingType = GetType(Integer)
+        Me.txt_dni.Location = New System.Drawing.Point(117, 36)
+        Me.txt_dni.Name = "txt_dni"
+        Me.txt_dni.nombre_campo = "dni"
+        Me.txt_dni.nombre_tabla = "Jugador"
+        Me.txt_dni.Size = New System.Drawing.Size(100, 20)
+        Me.txt_dni.TabIndex = 43
+        Me.txt_dni.validable = False
+        Me.txt_dni.ValidatingType = GetType(Integer)
         '
         'FormEliminarJugador
         '
@@ -74,7 +74,7 @@ Partial Class FormEliminarJugador
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkCyan
         Me.ClientSize = New System.Drawing.Size(252, 164)
-        Me.Controls.Add(Me.txt_id_club)
+        Me.Controls.Add(Me.txt_dni)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnEliminar)
         Me.Controls.Add(Me.Label2)
@@ -92,5 +92,5 @@ Partial Class FormEliminarJugador
     Friend WithEvents Label2 As Label
     Friend WithEvents BtnEliminar As Button
     Friend WithEvents BtnCancelar As Button
-    Friend WithEvents txt_id_club As MaskedTextBox_01
+    Friend WithEvents txt_dni As MaskedTextBox_01
 End Class

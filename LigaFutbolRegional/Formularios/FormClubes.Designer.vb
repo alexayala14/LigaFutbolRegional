@@ -22,7 +22,6 @@ Partial Class FormClubes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormClubes))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cmdClubConsulta = New System.Windows.Forms.Button()
@@ -32,11 +31,9 @@ Partial Class FormClubes
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ClubFutbolDataGridView = New System.Windows.Forms.DataGridView()
-
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClubFutbolDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-
         Me.SuspendLayout()
         '
         'Panel1
@@ -123,21 +120,6 @@ Partial Class FormClubes
         Me.ClubFutbolDataGridView.Size = New System.Drawing.Size(842, 316)
         Me.ClubFutbolDataGridView.TabIndex = 7
         '
-        'ClubFutbolBindingSource
-        '
-
-        '
-        'CampeonatoPavDataSet1
-        '
-
-        '
-        'ClubFutbolTableAdapter
-        '
-        '
-        'TableAdapterManager
-        '
-
-        '
         'FormClubes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -156,7 +138,6 @@ Partial Class FormClubes
         Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClubFutbolDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-
         Me.ResumeLayout(False)
 
     End Sub

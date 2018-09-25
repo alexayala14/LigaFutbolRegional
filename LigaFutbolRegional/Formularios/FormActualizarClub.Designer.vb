@@ -24,28 +24,29 @@ Partial Class FormActualizarClub
     Private Sub InitializeComponent()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnActualizar = New System.Windows.Forms.Button()
-        Me.cmb_id_estado_club = New LigaFutbolRegional.ComboBox_01()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.BtnBuscar = New System.Windows.Forms.Button()
+        Me.txt_id = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.cmb_id_estado_club = New LigaFutbolRegional.ComboBox_01()
         Me.txt_cod_postal = New LigaFutbolRegional.MaskedTextBox_01()
         Me.txt_nro_calle = New LigaFutbolRegional.MaskedTextBox_01()
         Me.txt_calle = New LigaFutbolRegional.MaskedTextBox_01()
         Me.txt_nro_cuil = New LigaFutbolRegional.MaskedTextBox_01()
         Me.txt_nombre_club = New LigaFutbolRegional.MaskedTextBox_01()
         Me.txt_siglas = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox_011 = New LigaFutbolRegional.ComboBox_01()
         Me.SuspendLayout()
         '
         'BtnCancelar
         '
         Me.BtnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnCancelar.Location = New System.Drawing.Point(171, 293)
+        Me.BtnCancelar.Location = New System.Drawing.Point(251, 293)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.BtnCancelar.TabIndex = 54
@@ -55,23 +56,12 @@ Partial Class FormActualizarClub
         'BtnActualizar
         '
         Me.BtnActualizar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnActualizar.Location = New System.Drawing.Point(69, 293)
+        Me.BtnActualizar.Location = New System.Drawing.Point(149, 293)
         Me.BtnActualizar.Name = "BtnActualizar"
         Me.BtnActualizar.Size = New System.Drawing.Size(75, 23)
         Me.BtnActualizar.TabIndex = 53
         Me.BtnActualizar.Text = "Actualizar"
         Me.BtnActualizar.UseVisualStyleBackColor = True
-        '
-        'cmb_id_estado_club
-        '
-        Me.cmb_id_estado_club.FormattingEnabled = True
-        Me.cmb_id_estado_club.Location = New System.Drawing.Point(94, 234)
-        Me.cmb_id_estado_club.Name = "cmb_id_estado_club"
-        Me.cmb_id_estado_club.nombre_campo = "id_estado_club"
-        Me.cmb_id_estado_club.nombre_tabla = "ClubFutbol"
-        Me.cmb_id_estado_club.Size = New System.Drawing.Size(55, 21)
-        Me.cmb_id_estado_club.TabIndex = 70
-        Me.cmb_id_estado_club.validable = True
         '
         'Label9
         '
@@ -99,6 +89,82 @@ Partial Class FormActualizarClub
         Me.Label7.Size = New System.Drawing.Size(25, 13)
         Me.Label7.TabIndex = 67
         Me.Label7.Text = "N° :"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(55, 159)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(33, 13)
+        Me.Label6.TabIndex = 59
+        Me.Label6.Text = "Calle:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(46, 129)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(42, 13)
+        Me.Label4.TabIndex = 58
+        Me.Label4.Text = "N° Cuil:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(41, 95)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(47, 13)
+        Me.Label3.TabIndex = 57
+        Me.Label3.Text = "Nombre:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(50, 63)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(38, 13)
+        Me.Label2.TabIndex = 56
+        Me.Label2.Text = "Siglas:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(69, 33)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(19, 13)
+        Me.Label1.TabIndex = 55
+        Me.Label1.Text = "Id:"
+        '
+        'BtnBuscar
+        '
+        Me.BtnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnBuscar.Location = New System.Drawing.Point(36, 293)
+        Me.BtnBuscar.Name = "BtnBuscar"
+        Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnBuscar.TabIndex = 72
+        Me.BtnBuscar.Text = "Buscar"
+        Me.BtnBuscar.UseVisualStyleBackColor = True
+        '
+        'txt_id
+        '
+        Me.txt_id.Location = New System.Drawing.Point(94, 30)
+        Me.txt_id.Name = "txt_id"
+        Me.txt_id.nombre_campo = Nothing
+        Me.txt_id.nombre_tabla = Nothing
+        Me.txt_id.Size = New System.Drawing.Size(100, 20)
+        Me.txt_id.TabIndex = 74
+        Me.txt_id.validable = False
+        '
+        'cmb_id_estado_club
+        '
+        Me.cmb_id_estado_club.FormattingEnabled = True
+        Me.cmb_id_estado_club.Location = New System.Drawing.Point(94, 234)
+        Me.cmb_id_estado_club.Name = "cmb_id_estado_club"
+        Me.cmb_id_estado_club.nombre_campo = "id_estado_club"
+        Me.cmb_id_estado_club.nombre_tabla = "ClubFutbol"
+        Me.cmb_id_estado_club.Size = New System.Drawing.Size(55, 21)
+        Me.cmb_id_estado_club.TabIndex = 70
+        Me.cmb_id_estado_club.validable = True
         '
         'txt_cod_postal
         '
@@ -161,69 +227,14 @@ Partial Class FormActualizarClub
         Me.txt_siglas.TabIndex = 61
         Me.txt_siglas.validable = True
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(55, 159)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(33, 13)
-        Me.Label6.TabIndex = 59
-        Me.Label6.Text = "Calle:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(46, 129)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(42, 13)
-        Me.Label4.TabIndex = 58
-        Me.Label4.Text = "N° Cuil:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(41, 95)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(47, 13)
-        Me.Label3.TabIndex = 57
-        Me.Label3.Text = "Nombre:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(50, 63)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(38, 13)
-        Me.Label2.TabIndex = 56
-        Me.Label2.Text = "Siglas:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(69, 33)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(19, 13)
-        Me.Label1.TabIndex = 55
-        Me.Label1.Text = "Id:"
-        '
-        'ComboBox_011
-        '
-        Me.ComboBox_011.FormattingEnabled = True
-        Me.ComboBox_011.Location = New System.Drawing.Point(94, 30)
-        Me.ComboBox_011.Name = "ComboBox_011"
-        Me.ComboBox_011.nombre_campo = "id_estado_club"
-        Me.ComboBox_011.nombre_tabla = "ClubFutbol"
-        Me.ComboBox_011.Size = New System.Drawing.Size(100, 21)
-        Me.ComboBox_011.TabIndex = 71
-        Me.ComboBox_011.validable = True
-        '
         'FormActualizarClub
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkCyan
         Me.ClientSize = New System.Drawing.Size(336, 358)
-        Me.Controls.Add(Me.ComboBox_011)
+        Me.Controls.Add(Me.txt_id)
+        Me.Controls.Add(Me.BtnBuscar)
         Me.Controls.Add(Me.cmb_id_estado_club)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
@@ -269,5 +280,6 @@ Partial Class FormActualizarClub
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox_011 As ComboBox_01
+    Friend WithEvents BtnBuscar As Button
+    Friend WithEvents txt_id As MaskedTextBox_01
 End Class

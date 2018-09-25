@@ -1,4 +1,4 @@
-﻿Public Class arbitro
+﻿Public Class Arbitro
     Dim _BD As New CONEXION_BD
     'Función para recuparar la lista de Arbitros
     Public Function lista_arbitros() As DataTable

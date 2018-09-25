@@ -24,7 +24,7 @@ Partial Class FormEliminarCampeonato
     Private Sub InitializeComponent()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
-        Me.txt_id_club = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_id_campeonato = New LigaFutbolRegional.MaskedTextBox_01()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -48,16 +48,16 @@ Partial Class FormEliminarCampeonato
         Me.BtnEliminar.Text = "Eliminar"
         Me.BtnEliminar.UseVisualStyleBackColor = True
         '
-        'txt_id_club
+        'txt_id_campeonato
         '
-        Me.txt_id_club.Location = New System.Drawing.Point(70, 51)
-        Me.txt_id_club.Name = "txt_id_club"
-        Me.txt_id_club.nombre_campo = Nothing
-        Me.txt_id_club.nombre_tabla = Nothing
-        Me.txt_id_club.Size = New System.Drawing.Size(100, 20)
-        Me.txt_id_club.TabIndex = 42
-        Me.txt_id_club.validable = False
-        Me.txt_id_club.ValidatingType = GetType(Integer)
+        Me.txt_id_campeonato.Location = New System.Drawing.Point(70, 51)
+        Me.txt_id_campeonato.Name = "txt_id_campeonato"
+        Me.txt_id_campeonato.nombre_campo = "id_campeonato"
+        Me.txt_id_campeonato.nombre_tabla = "Campeonato"
+        Me.txt_id_campeonato.Size = New System.Drawing.Size(100, 20)
+        Me.txt_id_campeonato.TabIndex = 42
+        Me.txt_id_campeonato.validable = False
+        Me.txt_id_campeonato.ValidatingType = GetType(Integer)
         '
         'Label1
         '
@@ -76,7 +76,7 @@ Partial Class FormEliminarCampeonato
         Me.ClientSize = New System.Drawing.Size(235, 224)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnEliminar)
-        Me.Controls.Add(Me.txt_id_club)
+        Me.Controls.Add(Me.txt_id_campeonato)
         Me.Controls.Add(Me.Label1)
         Me.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
@@ -92,6 +92,6 @@ Partial Class FormEliminarCampeonato
 
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnEliminar As Button
-    Friend WithEvents txt_id_club As MaskedTextBox_01
+    Friend WithEvents txt_id_campeonato As MaskedTextBox_01
     Friend WithEvents Label1 As Label
 End Class

@@ -14,4 +14,5 @@
         Me.DisplayMember = descripcion
         Me.ValueMember = pk
     End Sub
+
 End Class
