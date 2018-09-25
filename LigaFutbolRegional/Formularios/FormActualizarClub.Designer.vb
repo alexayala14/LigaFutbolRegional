@@ -39,13 +39,14 @@ Partial Class FormActualizarClub
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox_011 = New LigaFutbolRegional.ComboBox_01()
+        Me.BtnBuscar = New System.Windows.Forms.Button()
+        Me.txt_id = New LigaFutbolRegional.MaskedTextBox_01()
         Me.SuspendLayout()
         '
         'BtnCancelar
         '
         Me.BtnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnCancelar.Location = New System.Drawing.Point(171, 293)
+        Me.BtnCancelar.Location = New System.Drawing.Point(251, 293)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.BtnCancelar.TabIndex = 54
@@ -55,7 +56,7 @@ Partial Class FormActualizarClub
         'BtnActualizar
         '
         Me.BtnActualizar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnActualizar.Location = New System.Drawing.Point(69, 293)
+        Me.BtnActualizar.Location = New System.Drawing.Point(149, 293)
         Me.BtnActualizar.Name = "BtnActualizar"
         Me.BtnActualizar.Size = New System.Drawing.Size(75, 23)
         Me.BtnActualizar.TabIndex = 53
@@ -206,16 +207,25 @@ Partial Class FormActualizarClub
         Me.Label1.TabIndex = 55
         Me.Label1.Text = "Id:"
         '
-        'ComboBox_011
+        'BtnBuscar
         '
-        Me.ComboBox_011.FormattingEnabled = True
-        Me.ComboBox_011.Location = New System.Drawing.Point(94, 30)
-        Me.ComboBox_011.Name = "ComboBox_011"
-        Me.ComboBox_011.nombre_campo = "id_estado_club"
-        Me.ComboBox_011.nombre_tabla = "ClubFutbol"
-        Me.ComboBox_011.Size = New System.Drawing.Size(100, 21)
-        Me.ComboBox_011.TabIndex = 71
-        Me.ComboBox_011.validable = True
+        Me.BtnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnBuscar.Location = New System.Drawing.Point(36, 293)
+        Me.BtnBuscar.Name = "BtnBuscar"
+        Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnBuscar.TabIndex = 72
+        Me.BtnBuscar.Text = "Buscar"
+        Me.BtnBuscar.UseVisualStyleBackColor = True
+        '
+        'txt_id
+        '
+        Me.txt_id.Location = New System.Drawing.Point(94, 30)
+        Me.txt_id.Name = "txt_id"
+        Me.txt_id.nombre_campo = Nothing
+        Me.txt_id.nombre_tabla = Nothing
+        Me.txt_id.Size = New System.Drawing.Size(100, 20)
+        Me.txt_id.TabIndex = 74
+        Me.txt_id.validable = False
         '
         'FormActualizarClub
         '
@@ -223,7 +233,8 @@ Partial Class FormActualizarClub
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkCyan
         Me.ClientSize = New System.Drawing.Size(336, 358)
-        Me.Controls.Add(Me.ComboBox_011)
+        Me.Controls.Add(Me.txt_id)
+        Me.Controls.Add(Me.BtnBuscar)
         Me.Controls.Add(Me.cmb_id_estado_club)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
@@ -269,5 +280,6 @@ Partial Class FormActualizarClub
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox_011 As ComboBox_01
+    Friend WithEvents BtnBuscar As Button
+    Friend WithEvents txt_id As MaskedTextBox_01
 End Class

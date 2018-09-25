@@ -137,6 +137,7 @@ Partial Class FormRegistrarClub
         'cmb_id_estado_club
         '
         Me.cmb_id_estado_club.FormattingEnabled = True
+        Me.cmb_id_estado_club.Items.AddRange(New Object() {"1", "2", "3"})
         Me.cmb_id_estado_club.Location = New System.Drawing.Point(118, 250)
         Me.cmb_id_estado_club.Name = "cmb_id_estado_club"
         Me.cmb_id_estado_club.nombre_campo = "id_estado_club"

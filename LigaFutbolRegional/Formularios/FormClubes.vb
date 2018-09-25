@@ -9,7 +9,7 @@
 
 
     End Sub
-    Private Sub cargar_grilla()
+    Public Sub cargar_grilla()
         'Subrutina para carga la grilla
         'Se carga al recurso de datos (DataSource) de la grilla con el valor del resultado
         'del procedmiento ejecutado dentro del objeto negocio (usuarios) que es un DataTable
@@ -33,4 +33,6 @@
     Private Sub cmdClubEliminar_Click(sender As Object, e As EventArgs) Handles cmdClubEliminar.Click
         FormEliminarClub.Show()
     End Sub
+
+
 End Class

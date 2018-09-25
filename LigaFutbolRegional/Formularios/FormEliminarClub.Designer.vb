@@ -25,7 +25,7 @@ Partial Class FormEliminarClub
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.cmb_id_estado_club = New LigaFutbolRegional.ComboBox_01()
+        Me.txt_id_club = New LigaFutbolRegional.MaskedTextBox_01()
         Me.SuspendLayout()
         '
         'BtnCancelar
@@ -57,16 +57,15 @@ Partial Class FormEliminarClub
         Me.Label1.TabIndex = 37
         Me.Label1.Text = "Id:"
         '
-        'cmb_id_estado_club
+        'txt_id_club
         '
-        Me.cmb_id_estado_club.FormattingEnabled = True
-        Me.cmb_id_estado_club.Location = New System.Drawing.Point(62, 36)
-        Me.cmb_id_estado_club.Name = "cmb_id_estado_club"
-        Me.cmb_id_estado_club.nombre_campo = "id_estado_club"
-        Me.cmb_id_estado_club.nombre_tabla = "ClubFutbol"
-        Me.cmb_id_estado_club.Size = New System.Drawing.Size(83, 21)
-        Me.cmb_id_estado_club.TabIndex = 71
-        Me.cmb_id_estado_club.validable = True
+        Me.txt_id_club.Location = New System.Drawing.Point(62, 36)
+        Me.txt_id_club.Name = "txt_id_club"
+        Me.txt_id_club.nombre_campo = Nothing
+        Me.txt_id_club.nombre_tabla = Nothing
+        Me.txt_id_club.Size = New System.Drawing.Size(83, 20)
+        Me.txt_id_club.TabIndex = 72
+        Me.txt_id_club.validable = False
         '
         'FormEliminarClub
         '
@@ -74,7 +73,7 @@ Partial Class FormEliminarClub
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkCyan
         Me.ClientSize = New System.Drawing.Size(231, 220)
-        Me.Controls.Add(Me.cmb_id_estado_club)
+        Me.Controls.Add(Me.txt_id_club)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnEliminar)
         Me.Controls.Add(Me.Label1)
@@ -93,5 +92,5 @@ Partial Class FormEliminarClub
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnEliminar As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents cmb_id_estado_club As ComboBox_01
+    Friend WithEvents txt_id_club As MaskedTextBox_01
 End Class

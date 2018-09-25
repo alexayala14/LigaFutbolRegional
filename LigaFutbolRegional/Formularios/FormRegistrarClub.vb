@@ -39,6 +39,7 @@
     End Sub
 
     Private Sub FormRegistrarClub_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.cmb_id_estado_club.cargar(_BD.leo_tabla("SELECT * FROM EstadoClub"), "id_estado_club", "descripcion")
         Me._TE.blanquear_objetos(Me)
         Me.txt_siglas.Focus()
         Me.control_estado_grabacion = estado_grabacion.insertar

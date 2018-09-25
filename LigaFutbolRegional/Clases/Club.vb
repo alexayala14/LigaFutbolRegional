@@ -33,6 +33,7 @@
     Public Property id_estado_club As Integer
 
 
+
     'método público que gestiona la transferencia de datos desde el front end (formulario) al negocio (usuarios),
     'como también del negocio al front end. 
     'los parametros de entrada son los objetos de formulario, y luego el camino de recorrido que es bidireciona.
@@ -65,9 +66,9 @@
             'con el mismo nombre que el campo de la tabla.
             If obj.GetType().Name = "MaskedTextBox_01" Then
                 Select Case obj.nombre_campo
-                    Case "id_club"
-                        'tranferencia del valor de variable privada a propiedad text del objeto encontrado
-                        obj.Text = _id_club
+                    'Case "id_club"
+                    '    'tranferencia del valor de variable privada a propiedad text del objeto encontrado
+                    '    obj.Text = _id_club
                     Case "siglas"
                         obj.Text = _siglas
                     Case "nombre_club"
@@ -117,8 +118,8 @@
                 'Se transfier el contenido del objeto a la variable loca del negocio que coincide con la
                 'propiedad que es imagen de un nombre de campo de la tabla
                 Select Case obj.nombre_campo
-                    Case "id_club"
-                        _id_club = obj.Text
+                    'Case "id_club"
+                    '    _id_club = obj.Text
                     Case "siglas"
                         _siglas = obj.Text
                     Case "nombre_club"
@@ -158,16 +159,16 @@
     Public Sub insertar()
         Dim sql As String = ""
         sql = "INSERT INTO ClubFutbol ("
-        sql &= "id_club"
-        sql &= ",siglas"
+
+        sql &= "siglas"
         sql &= ",nombre_club"
         sql &= ",nro_cuil"
         sql &= ",calle"
         sql &= ",nro_calle"
         sql &= ",cod_postal"
         sql &= ",id_estado_club) VALUES ("
-        sql &= "'" & _id_club & "'"
-        sql &= ",'" & _siglas & "'"
+
+        sql &= "'" & _siglas & "'"
         sql &= ", '" & _nombre_club & "'"
         sql &= ",'" & _nro_cuil & "'"
         sql &= ",'" & _calle & "'"
@@ -179,6 +180,33 @@
     'subrutina para borrar un registro
     Public Sub borrar(ByVal id_club As Integer)
         Me._BD.INS_MOD_BOR("DELETE FROM ClubFutbol WHERE id_club = " & id_club)
+
+    End Sub
+
+    Public Sub modificar(ByVal id_club As Integer)
+        Dim sql As String = ""
+        sql = "UPDATE ClubFutbol "
+        sql &= "SET siglas ='" & _siglas & "'"
+        sql &= ", nombre_club ='" & _nombre_club & "'"
+        sql &= ", nro_cuil = '" & _nro_cuil & "'"
+        sql &= ", calle = '" & _calle & "'"
+        sql &= ",nro_calle = " & _nro_calle
+        sql &= ", cod_postal =" & _cod_postal
+        sql &= ", id_estado_club =" & _id_estado_club
+        sql &= "WHERE id_club = " & id_club
+        Me._BD.INS_MOD_BOR(sql)
+    End Sub
+    Public Sub buscar_club(ByVal id_club As Integer)
+        Dim tabla As New DataTable
+        tabla = Me._BD.leo_tabla("SELECT * FROM ClubFutbol where id_club =" & id_club)
+        _siglas = tabla.Rows(0)("siglas")
+        _nombre_club = tabla.Rows(0)("nombre_club")
+        _nro_cuil = tabla.Rows(0)("nro_cuil")
+        _calle = tabla.Rows(0)("calle")
+        _nro_calle = tabla.Rows(0)("nro_calle")
+        _cod_postal = tabla.Rows(0)("cod_postal")
+        _id_estado_club = tabla.Rows(0)("id_estado_club")
+
     End Sub
 
 End Class
