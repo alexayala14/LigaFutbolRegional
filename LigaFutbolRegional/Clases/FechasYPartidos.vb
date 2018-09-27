@@ -1,5 +1,4 @@
-﻿Public Class Campeonato
-    'enumeración para control explicito de validación
+﻿Public Class FechasYPartidos
     Enum estado_validar
         encontrado
         no_encontrado
@@ -23,14 +22,16 @@
     'Recordar que este tipo de definición de propiedad pública, genera en forma implicita una variable local
     'con el mismo nombre que lleva como prefijo un guion bajo ej: la variable para la primera propiedad es
     '_id_usuario
-    Public Property id_campeonato As Integer
-    Public Property anio As Integer
-    Public Property nombre As String
-    Public Property fecha_inicio As Date
-    Public Property fecha_fin As Date
-    Public Property puntaje_victoria As Integer
-    Public Property puntaje_empate As Integer
-    Public Property id_estado_campeonato As Integer
+    Public Property id_club_local As Integer
+    Public Property id_club_visitante As Integer
+    Public Property id_estado_partido As Integer
+    Public Property goles_locales As Integer
+    Public Property goles_visitante As Integer
+    Public Property fecha_hora_inicio As String
+    'Public Property rol_autoridad As Integer
+
+
+
 
     'método público que gestiona la transferencia de datos desde el front end (formulario) al negocio (usuarios),
     'como también del negocio al front end. 
@@ -64,30 +65,30 @@
             'con el mismo nombre que el campo de la tabla.
             If obj.GetType().Name = "MaskedTextBox_01" Then
                 Select Case obj.nombre_campo
-                    'Case "id_campeonato"
-                    '    'tranferencia del valor de variable privada a propiedad text del objeto encontrado
-                    '    obj.Text = _id_campeonato
-                    Case "anio"
-                        obj.Text = _anio
-                    Case "nombre"
-                        obj.Text = _nombre
-                    Case "fecha_inicio"
-                        obj.Text = _fecha_inicio
-                    Case "fecha_fin"
-                        obj.Text = _fecha_fin
-                    Case "puntaje_victoria"
-                        obj.Text = _puntaje_victoria
-                    Case "puntaje_empate"
-                        obj.Text = _puntaje_empate
+
+                    Case "goles_locales"
+                        obj.Text = _goles_locales
+                    Case "goles_visitante"
+                        obj.Text = _goles_visitante
+                    Case "fecha_hora_inicio"
+                        obj.Text = _fecha_hora_inicio
+
+
 
                 End Select
             End If
             'El mismo proceso de analisis que se realizo al MaskeTextBox_01, se realiza al ComboBox_01,
             'pero como es un único objeto no utilizamos una estructura case
             If obj.GetType().Name = "ComboBox_01" Then
-                If obj.nombre_campo = "id_estado_campeonato" Then
-                    obj.SelectedValue = _id_estado_campeonato
-                End If
+                Select Case obj.nombre_campo
+                    Case "id_club_local"
+                        obj.SelectedValue = _id_club_local
+                    Case "id_club_visitante"
+                        obj.SelectedValue = _id_club_visitante
+                    Case "id_estado_partido"
+                        obj.SelectedValue = _id_estado_partido
+
+                End Select
             End If
         Next
         Return estado_transferencia.ok
@@ -116,22 +117,22 @@
                 'Se transfier el contenido del objeto a la variable loca del negocio que coincide con la
                 'propiedad que es imagen de un nombre de campo de la tabla
                 Select Case obj.nombre_campo
-                    'Case "id_campeonato"
-                    '    _id_campeonato = obj.Text
-                    Case "anio"
-                        _anio = obj.Text
-                    Case "nombre"
-                        _nombre = obj.Text
-                    Case "fecha_inicio"
-                        _fecha_inicio = obj.Text
-                    Case "fecha_fin"
-                        _fecha_fin = obj.Text
-                    Case "puntaje_victoria"
-                        _puntaje_victoria = obj.Text
-                    Case "puntaje_empate"
-                        _puntaje_empate = obj.Text
-                    Case "id_estado_campeonato"
-                        _id_estado_campeonato = IIf(obj.Text = "", 0, obj.text)
+
+
+                    Case "id_club_local"
+                        _id_club_local = IIf(obj.Text = "", 0, obj.text)
+                    Case "id_club_visitante"
+                        _id_club_visitante = IIf(obj.Text = "", 0, obj.text)
+                    Case "id_estado_partido"
+                        _id_estado_partido = IIf(obj.Text = "", 0, obj.text)
+                    Case "goles_locales"
+                        _goles_locales = obj.Text
+                    Case "goles_visitante"
+                        _goles_visitante = obj.Text
+                    Case "fecha_hora_inicio"
+                        _fecha_hora_inicio = obj.Text
+
+
                 End Select
             End If
             'Para ComboBox_01 se aplica la misma mecánica que para MaskedTextBox_01
@@ -143,69 +144,18 @@
                         Return estado_transferencia.datosErroneos
                     End If
                 End If
-                _id_estado_campeonato = obj.SelectedValue
+                _id_club_local = obj.SelectedValue
+                _id_club_visitante = obj.SelectedValue
+                id_estado_partido = obj.SelectedValue
             End If
         Next
         Return estado_transferencia.ok
     End Function
-
-    'Función para recuperar la lista de campeonatos
-    Public Function lista_campeonatos() As DataTable
+    'Función para recuparar la lista de usuarios
+    Public Function lista_arbitro() As DataTable
         'Se utiliza el objeto _BD (instancia CONEXION_DB), la función leo tabla que devuelve un DataTable
-        Return _BD.leo_tabla("SELECT * FROM Campeonato")
+        Return _BD.leo_tabla("SELECT * FROM Partido")
     End Function
 
-    Public Sub insertar()
-        Dim sql As String = ""
-        sql = "INSERT INTO Campeonato ("
-
-        sql &= "anio"
-        sql &= ",nombre"
-        sql &= ",fecha_inicio"
-        sql &= ",fecha_fin"
-        sql &= ",puntaje_victoria"
-        sql &= ",puntaje_empate"
-        sql &= ",id_estado_campeonato) VALUES ("
-
-        sql &= "" & _anio & ""
-        sql &= ", '" & _nombre & "'"
-        sql &= ",'" & _fecha_inicio & "'"
-        sql &= ",'" & _fecha_fin & "'"
-        sql &= ",'" & _puntaje_victoria & "'"
-        sql &= ",'" & _puntaje_empate & "'"
-        sql &= "," & _id_estado_campeonato & ")"
-        Me._BD.INS_MOD_BOR(sql)
-    End Sub
-
-    Public Sub modificar(ByVal id_campeonato As Integer)
-        Dim sql As String = ""
-        sql = "UPDATE Campeonato "
-        sql &= "SET anio ='" & _anio & "'"
-        sql &= ", nombre ='" & _nombre & "'"
-        sql &= ", fecha_inicio = '" & _fecha_inicio & "'"
-        sql &= ", fecha_fin = '" & _fecha_fin & "'"
-        sql &= ",puntaje_victoria = " & _puntaje_victoria
-        sql &= ", puntaje_empate =" & _puntaje_empate
-        sql &= ", id_estado_campeonato =" & _id_estado_campeonato
-        sql &= "WHERE id_campeonato = " & id_campeonato
-        Me._BD.INS_MOD_BOR(sql)
-    End Sub
-
-    Public Sub buscar_campeonato(ByVal id_campeonato As Integer)
-        Dim tabla As New DataTable
-        tabla = Me._BD.leo_tabla("SELECT * FROM Campeonato where id_campeonato =" & id_campeonato)
-        _anio = tabla.Rows(0)("anio")
-        _nombre = tabla.Rows(0)("nombre")
-        _fecha_inicio = tabla.Rows(0)("fecha_inicio")
-        _fecha_fin = tabla.Rows(0)("fecha_fin")
-        _puntaje_victoria = tabla.Rows(0)("puntaje_victoria")
-        _puntaje_empate = tabla.Rows(0)("puntaje_empate")
-        _id_estado_campeonato = tabla.Rows(0)("id_estado_campeonato")
-
-    End Sub
-    'subrutina para borrar un registro
-    Public Sub borrar(ByVal id_campeonato As Integer)
-        Me._BD.INS_MOD_BOR("DELETE FROM Campeonato WHERE id_campeonato = " & id_campeonato)
-
-    End Sub
 End Class
+

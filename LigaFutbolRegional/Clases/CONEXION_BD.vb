@@ -3,7 +3,7 @@
     Dim conexion As New OleDb.OleDbConnection
     ' declaro el objeto command (ejecuta los comandos sql, sobre la conexion)
     Dim cmd As New OleDb.OleDbCommand
-
+    'Dim _cadena_conexion As String = "Provider=SQLNCLI11;Data Source=(localdb)\Campeonato;Integrated Security=SSPI;Initial Catalog=CampeonatoPav"
     Dim _cadena_conexion As String = "Provider=SQLNCLI11;Data Source=DESKTOP-HQ9HGAN;Integrated Security=SSPI;Initial Catalog=CampeonatoPav"
     Private Sub conectar()
         'asigno la cadena de conexion que tiene los parametros para conectar

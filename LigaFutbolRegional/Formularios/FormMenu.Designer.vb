@@ -39,11 +39,15 @@ Partial Class FormMenu
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.panel_Reportes = New System.Windows.Forms.Panel()
+        Me.btn_estadisticas = New System.Windows.Forms.Button()
+        Me.btn_reportes = New System.Windows.Forms.Button()
         Me.PanelMenu.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelCampeonatos.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panel_Reportes.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelMenu
@@ -230,6 +234,42 @@ Partial Class FormMenu
         Me.PictureBox2.TabIndex = 3
         Me.PictureBox2.TabStop = False
         '
+        'panel_Reportes
+        '
+        Me.panel_Reportes.BackColor = System.Drawing.Color.DarkCyan
+        Me.panel_Reportes.Controls.Add(Me.btn_estadisticas)
+        Me.panel_Reportes.Controls.Add(Me.btn_reportes)
+        Me.panel_Reportes.Location = New System.Drawing.Point(149, 333)
+        Me.panel_Reportes.Name = "panel_Reportes"
+        Me.panel_Reportes.Size = New System.Drawing.Size(138, 85)
+        Me.panel_Reportes.TabIndex = 4
+        '
+        'btn_estadisticas
+        '
+        Me.btn_estadisticas.BackColor = System.Drawing.Color.DarkCyan
+        Me.btn_estadisticas.FlatAppearance.BorderSize = 0
+        Me.btn_estadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_estadisticas.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btn_estadisticas.Location = New System.Drawing.Point(3, 38)
+        Me.btn_estadisticas.Name = "btn_estadisticas"
+        Me.btn_estadisticas.Size = New System.Drawing.Size(132, 32)
+        Me.btn_estadisticas.TabIndex = 2
+        Me.btn_estadisticas.Text = "Estadisticas"
+        Me.btn_estadisticas.UseVisualStyleBackColor = False
+        '
+        'btn_reportes
+        '
+        Me.btn_reportes.BackColor = System.Drawing.Color.DarkCyan
+        Me.btn_reportes.FlatAppearance.BorderSize = 0
+        Me.btn_reportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_reportes.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btn_reportes.Location = New System.Drawing.Point(3, 3)
+        Me.btn_reportes.Name = "btn_reportes"
+        Me.btn_reportes.Size = New System.Drawing.Size(132, 32)
+        Me.btn_reportes.TabIndex = 1
+        Me.btn_reportes.Text = "Reportes"
+        Me.btn_reportes.UseVisualStyleBackColor = False
+        '
         'FormMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -238,6 +278,7 @@ Partial Class FormMenu
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(808, 490)
+        Me.Controls.Add(Me.panel_Reportes)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PanelCampeonatos)
         Me.Controls.Add(Me.Panel1)
@@ -254,6 +295,7 @@ Partial Class FormMenu
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelCampeonatos.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.panel_Reportes.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -274,4 +316,7 @@ Partial Class FormMenu
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents panel_Reportes As Panel
+    Friend WithEvents btn_estadisticas As Button
+    Friend WithEvents btn_reportes As Button
 End Class

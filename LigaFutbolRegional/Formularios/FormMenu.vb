@@ -10,8 +10,10 @@
     End Sub
 
     Private Sub cmdCampeonatos_Click(sender As Object, e As EventArgs) Handles cmdCampeonatos.Click
+        panel_Reportes.Hide()
         If PanelCampeonatos.Visible = True Then
             PanelCampeonatos.Visible = False
+
         Else
             PanelCampeonatos.Visible = True
         End If
@@ -24,6 +26,7 @@
         cmdFP.Location = New Point(3, 269)
         cmdRE.Location = New Point(3, 307)
 
+
         If PanelCampeonatos.Visible = False Then
             cmdCampeonatos.Location = New Point(3, 3)
             cmdClub.Location = New Point(3, 41)
@@ -31,6 +34,7 @@
             cmdArbitro.Location = New Point(3, 117)
             cmdFP.Location = New Point(3, 155)
             cmdRE.Location = New Point(3, 193)
+            panel_Reportes.Location = New Point(3, 333)
         End If
 
     End Sub
@@ -43,6 +47,7 @@
         cmdFP.Location = New Point(3, 155)
         cmdRE.Location = New Point(3, 193)
         PanelCampeonatos.Hide()
+        panel_Reportes.Hide()
     End Sub
 
     Private Sub cmdClub_Click(sender As Object, e As EventArgs) Handles cmdClub.Click
@@ -71,5 +76,29 @@
 
     Private Sub cmdFP_Click(sender As Object, e As EventArgs) Handles cmdFP.Click
         FormFechasYPartidos.Show()
+    End Sub
+
+    Private Sub cmdRE_Click(sender As Object, e As EventArgs) Handles cmdRE.Click
+
+        If panel_Reportes.Visible = True Then
+            panel_Reportes.Visible = False
+
+        Else
+            panel_Reportes.Visible = True
+            PanelCampeonatos.Hide()
+            panel_Reportes.Location = New Point(3, 333)
+            cmdCampeonatos.Location = New Point(3, 3)
+            cmdClub.Location = New Point(3, 41)
+            cmdJugador.Location = New Point(3, 79)
+            cmdArbitro.Location = New Point(3, 117)
+            cmdFP.Location = New Point(3, 155)
+            cmdRE.Location = New Point(3, 193)
+
+        End If
+
+    End Sub
+
+    Private Sub btn_reportes_Click(sender As Object, e As EventArgs) Handles btn_reportes.Click
+        FormReportes.Show()
     End Sub
 End Class

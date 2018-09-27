@@ -27,7 +27,7 @@
     Public Property dni As Integer
     Public Property nombre As String
     Public Property apellido As String
-    Public Property fecha_nacimiento As Date
+    Public Property fecha_nacimiento As String
     Public Property calle As String
     Public Property nro_calle As Integer
     Public Property cod_postal As Integer
@@ -121,8 +121,8 @@
                 'Se transfier el contenido del objeto a la variable loca del negocio que coincide con la
                 'propiedad que es imagen de un nombre de campo de la tabla
                 Select Case obj.nombre_campo
-                    'Case "id_campeonato"
-                    '    _id_campeonato = obj.Text
+                    Case "tipo_doc"
+                        _tipo_doc = IIf(obj.Text = "", 0, obj.text)
                     Case "dni"
                         _dni = obj.Text
                     Case "nombre"
@@ -150,6 +150,7 @@
                         Return estado_transferencia.datosErroneos
                     End If
                 End If
+                _tipo_doc = obj.SelectedValue
                 _id_posicion_preferente = obj.SelectedValue
             End If
         Next
@@ -164,7 +165,7 @@
     Public Sub insertar()
         Dim sql As String = ""
         sql = "INSERT INTO Jugador ("
-
+        sql &= "tipo_doc,"
         sql &= "dni"
         sql &= ",nombre"
         sql &= ",apellido"
@@ -174,13 +175,14 @@
         sql &= ",cod_postal"
         sql &= ",id_posicion_preferente) VALUES ("
 
-        sql &= "'" & _dni & "'"
+        sql &= "" & _tipo_doc
+        sql &= "," & _dni & ""
         sql &= ", '" & _nombre & "'"
         sql &= ", '" & _apellido & "'"
         sql &= ",'" & _fecha_nacimiento & "'"
         sql &= ",'" & _calle & "'"
-        sql &= ",'" & _nro_calle & "'"
-        sql &= ",'" & _cod_postal & "'"
+        sql &= "," & _nro_calle & ""
+        sql &= "," & _cod_postal & ""
         sql &= "," & _id_posicion_preferente & ")"
         Me._BD.INS_MOD_BOR(sql)
     End Sub
@@ -188,7 +190,7 @@
     Public Sub modificar(ByVal dni As Integer)
         Dim sql As String = ""
         sql = "UPDATE Jugador "
-        sql &= "SET dni ='" & _dni & "'"
+        sql &= "SET tipo_doc =" & _tipo_doc & ""
         sql &= ", nombre ='" & _nombre & "'"
         sql &= ", apellido ='" & _apellido & "'"
         sql &= ", fecha_nacimiento = '" & _fecha_nacimiento & "'"
@@ -200,10 +202,11 @@
         Me._BD.INS_MOD_BOR(sql)
     End Sub
 
-    Public Sub buscar_campeonato(ByVal dni As Integer)
+    Public Sub buscar_jugador(ByVal dni As Integer)
         Dim tabla As New DataTable
         tabla = Me._BD.leo_tabla("SELECT * FROM Jugador where dni =" & dni)
         _dni = tabla.Rows(0)("dni")
+        _tipo_doc = tabla.Rows(0)("tipo_doc")
         _nombre = tabla.Rows(0)("nombre")
         _apellido = tabla.Rows(0)("apellido")
         _fecha_nacimiento = tabla.Rows(0)("fecha_nacimiento")
