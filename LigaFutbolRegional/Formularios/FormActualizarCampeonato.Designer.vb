@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormActualizarCampeonato
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,38 +20,39 @@ Partial Class FormActualizarCampeonato
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.cmb_id_estado_club = New LigaFutbolRegional.ComboBox_01()
+        Me.cmb_id_estado_campeonato = New LigaFutbolRegional.ComboBox_01()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.BtnRegistrar = New System.Windows.Forms.Button()
-        Me.txt_cod_postal = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.txt_nro_calle = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.txt_calle = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.txt_nro_cuil = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.txt_nombre_club = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.txt_siglas = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.BtnActualizar = New System.Windows.Forms.Button()
+        Me.txt_puntaje_empate = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_puntaje_victoria = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_fecha_fin = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_fecha_inicio = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_nombre = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_anio = New LigaFutbolRegional.MaskedTextBox_01()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox_011 = New LigaFutbolRegional.ComboBox_01()
+        Me.BtnBuscar = New System.Windows.Forms.Button()
+        Me.txt_id = New LigaFutbolRegional.MaskedTextBox_01()
         Me.SuspendLayout()
         '
-        'cmb_id_estado_club
+        'cmb_id_estado_campeonato
         '
-        Me.cmb_id_estado_club.FormattingEnabled = True
-        Me.cmb_id_estado_club.Location = New System.Drawing.Point(145, 250)
-        Me.cmb_id_estado_club.Name = "cmb_id_estado_club"
-        Me.cmb_id_estado_club.nombre_campo = "id_estado_club"
-        Me.cmb_id_estado_club.nombre_tabla = "ClubFutbol"
-        Me.cmb_id_estado_club.Size = New System.Drawing.Size(55, 21)
-        Me.cmb_id_estado_club.TabIndex = 76
-        Me.cmb_id_estado_club.validable = True
+        Me.cmb_id_estado_campeonato.FormattingEnabled = True
+        Me.cmb_id_estado_campeonato.Location = New System.Drawing.Point(145, 250)
+        Me.cmb_id_estado_campeonato.Name = "cmb_id_estado_campeonato"
+        Me.cmb_id_estado_campeonato.nombre_campo = "id_estado_campeonato"
+        Me.cmb_id_estado_campeonato.nombre_tabla = "Campeonato"
+        Me.cmb_id_estado_campeonato.Size = New System.Drawing.Size(55, 21)
+        Me.cmb_id_estado_campeonato.TabIndex = 76
+        Me.cmb_id_estado_campeonato.validable = True
         '
         'Label9
         '
@@ -83,83 +84,83 @@ Partial Class FormActualizarCampeonato
         'BtnCancelar
         '
         Me.BtnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnCancelar.Location = New System.Drawing.Point(227, 299)
+        Me.BtnCancelar.Location = New System.Drawing.Point(261, 299)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.BtnCancelar.TabIndex = 72
         Me.BtnCancelar.Text = "Cancelar"
         Me.BtnCancelar.UseVisualStyleBackColor = True
         '
-        'BtnRegistrar
+        'BtnActualizar
         '
-        Me.BtnRegistrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnRegistrar.Location = New System.Drawing.Point(125, 299)
-        Me.BtnRegistrar.Name = "BtnRegistrar"
-        Me.BtnRegistrar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnRegistrar.TabIndex = 71
-        Me.BtnRegistrar.Text = "Actualizar"
-        Me.BtnRegistrar.UseVisualStyleBackColor = True
+        Me.BtnActualizar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnActualizar.Location = New System.Drawing.Point(145, 299)
+        Me.BtnActualizar.Name = "BtnActualizar"
+        Me.BtnActualizar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnActualizar.TabIndex = 71
+        Me.BtnActualizar.Text = "Actualizar"
+        Me.BtnActualizar.UseVisualStyleBackColor = True
         '
-        'txt_cod_postal
+        'txt_puntaje_empate
         '
-        Me.txt_cod_postal.Location = New System.Drawing.Point(145, 220)
-        Me.txt_cod_postal.Name = "txt_cod_postal"
-        Me.txt_cod_postal.nombre_campo = "cod_postal"
-        Me.txt_cod_postal.nombre_tabla = "ClubFutbol"
-        Me.txt_cod_postal.Size = New System.Drawing.Size(100, 20)
-        Me.txt_cod_postal.TabIndex = 70
-        Me.txt_cod_postal.validable = True
-        Me.txt_cod_postal.ValidatingType = GetType(Integer)
+        Me.txt_puntaje_empate.Location = New System.Drawing.Point(145, 220)
+        Me.txt_puntaje_empate.Name = "txt_puntaje_empate"
+        Me.txt_puntaje_empate.nombre_campo = "puntaje_empate"
+        Me.txt_puntaje_empate.nombre_tabla = "Campeonato"
+        Me.txt_puntaje_empate.Size = New System.Drawing.Size(100, 20)
+        Me.txt_puntaje_empate.TabIndex = 70
+        Me.txt_puntaje_empate.validable = True
+        Me.txt_puntaje_empate.ValidatingType = GetType(Integer)
         '
-        'txt_nro_calle
+        'txt_puntaje_victoria
         '
-        Me.txt_nro_calle.Location = New System.Drawing.Point(145, 194)
-        Me.txt_nro_calle.Name = "txt_nro_calle"
-        Me.txt_nro_calle.nombre_campo = "nro_calle"
-        Me.txt_nro_calle.nombre_tabla = "ClubFutbol"
-        Me.txt_nro_calle.Size = New System.Drawing.Size(100, 20)
-        Me.txt_nro_calle.TabIndex = 69
-        Me.txt_nro_calle.validable = True
+        Me.txt_puntaje_victoria.Location = New System.Drawing.Point(145, 194)
+        Me.txt_puntaje_victoria.Name = "txt_puntaje_victoria"
+        Me.txt_puntaje_victoria.nombre_campo = "puntaje_victoria"
+        Me.txt_puntaje_victoria.nombre_tabla = "Campeonato"
+        Me.txt_puntaje_victoria.Size = New System.Drawing.Size(100, 20)
+        Me.txt_puntaje_victoria.TabIndex = 69
+        Me.txt_puntaje_victoria.validable = True
         '
-        'txt_calle
+        'txt_fecha_fin
         '
-        Me.txt_calle.Location = New System.Drawing.Point(145, 168)
-        Me.txt_calle.Name = "txt_calle"
-        Me.txt_calle.nombre_campo = "calle"
-        Me.txt_calle.nombre_tabla = "ClubFutbol"
-        Me.txt_calle.Size = New System.Drawing.Size(191, 20)
-        Me.txt_calle.TabIndex = 68
-        Me.txt_calle.validable = True
+        Me.txt_fecha_fin.Location = New System.Drawing.Point(145, 168)
+        Me.txt_fecha_fin.Name = "txt_fecha_fin"
+        Me.txt_fecha_fin.nombre_campo = "fecha_fin"
+        Me.txt_fecha_fin.nombre_tabla = "Campeonato"
+        Me.txt_fecha_fin.Size = New System.Drawing.Size(191, 20)
+        Me.txt_fecha_fin.TabIndex = 68
+        Me.txt_fecha_fin.validable = True
         '
-        'txt_nro_cuil
+        'txt_fecha_inicio
         '
-        Me.txt_nro_cuil.Location = New System.Drawing.Point(145, 142)
-        Me.txt_nro_cuil.Name = "txt_nro_cuil"
-        Me.txt_nro_cuil.nombre_campo = "nro_cuil"
-        Me.txt_nro_cuil.nombre_tabla = "ClubFutbol"
-        Me.txt_nro_cuil.Size = New System.Drawing.Size(191, 20)
-        Me.txt_nro_cuil.TabIndex = 67
-        Me.txt_nro_cuil.validable = True
+        Me.txt_fecha_inicio.Location = New System.Drawing.Point(145, 142)
+        Me.txt_fecha_inicio.Name = "txt_fecha_inicio"
+        Me.txt_fecha_inicio.nombre_campo = "fecha_inicio"
+        Me.txt_fecha_inicio.nombre_tabla = "Campeonato"
+        Me.txt_fecha_inicio.Size = New System.Drawing.Size(191, 20)
+        Me.txt_fecha_inicio.TabIndex = 67
+        Me.txt_fecha_inicio.validable = True
         '
-        'txt_nombre_club
+        'txt_nombre
         '
-        Me.txt_nombre_club.Location = New System.Drawing.Point(145, 108)
-        Me.txt_nombre_club.Name = "txt_nombre_club"
-        Me.txt_nombre_club.nombre_campo = "nombre_club"
-        Me.txt_nombre_club.nombre_tabla = "ClubFutbol"
-        Me.txt_nombre_club.Size = New System.Drawing.Size(191, 20)
-        Me.txt_nombre_club.TabIndex = 66
-        Me.txt_nombre_club.validable = True
+        Me.txt_nombre.Location = New System.Drawing.Point(145, 108)
+        Me.txt_nombre.Name = "txt_nombre"
+        Me.txt_nombre.nombre_campo = "nombre"
+        Me.txt_nombre.nombre_tabla = "Campeonato"
+        Me.txt_nombre.Size = New System.Drawing.Size(191, 20)
+        Me.txt_nombre.TabIndex = 66
+        Me.txt_nombre.validable = True
         '
-        'txt_siglas
+        'txt_anio
         '
-        Me.txt_siglas.Location = New System.Drawing.Point(145, 76)
-        Me.txt_siglas.Name = "txt_siglas"
-        Me.txt_siglas.nombre_campo = "siglas"
-        Me.txt_siglas.nombre_tabla = "ClubFutbol"
-        Me.txt_siglas.Size = New System.Drawing.Size(100, 20)
-        Me.txt_siglas.TabIndex = 65
-        Me.txt_siglas.validable = True
+        Me.txt_anio.Location = New System.Drawing.Point(145, 76)
+        Me.txt_anio.Name = "txt_anio"
+        Me.txt_anio.nombre_campo = "anio"
+        Me.txt_anio.nombre_tabla = "Campeonato"
+        Me.txt_anio.Size = New System.Drawing.Size(100, 20)
+        Me.txt_anio.TabIndex = 65
+        Me.txt_anio.validable = True
         '
         'Label6
         '
@@ -206,16 +207,25 @@ Partial Class FormActualizarCampeonato
         Me.Label1.TabIndex = 59
         Me.Label1.Text = "Id:"
         '
-        'ComboBox_011
+        'BtnBuscar
         '
-        Me.ComboBox_011.FormattingEnabled = True
-        Me.ComboBox_011.Location = New System.Drawing.Point(145, 46)
-        Me.ComboBox_011.Name = "ComboBox_011"
-        Me.ComboBox_011.nombre_campo = "id_estado_club"
-        Me.ComboBox_011.nombre_tabla = "ClubFutbol"
-        Me.ComboBox_011.Size = New System.Drawing.Size(100, 21)
-        Me.ComboBox_011.TabIndex = 77
-        Me.ComboBox_011.validable = True
+        Me.BtnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnBuscar.Location = New System.Drawing.Point(30, 299)
+        Me.BtnBuscar.Name = "BtnBuscar"
+        Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnBuscar.TabIndex = 78
+        Me.BtnBuscar.Text = "Buscar"
+        Me.BtnBuscar.UseVisualStyleBackColor = True
+        '
+        'txt_id
+        '
+        Me.txt_id.Location = New System.Drawing.Point(145, 46)
+        Me.txt_id.Name = "txt_id"
+        Me.txt_id.nombre_campo = "id_campeonato"
+        Me.txt_id.nombre_tabla = "Campeonato"
+        Me.txt_id.Size = New System.Drawing.Size(100, 20)
+        Me.txt_id.TabIndex = 79
+        Me.txt_id.validable = False
         '
         'FormActualizarCampeonato
         '
@@ -223,19 +233,20 @@ Partial Class FormActualizarCampeonato
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkCyan
         Me.ClientSize = New System.Drawing.Size(388, 369)
-        Me.Controls.Add(Me.ComboBox_011)
-        Me.Controls.Add(Me.cmb_id_estado_club)
+        Me.Controls.Add(Me.txt_id)
+        Me.Controls.Add(Me.BtnBuscar)
+        Me.Controls.Add(Me.cmb_id_estado_campeonato)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.BtnCancelar)
-        Me.Controls.Add(Me.BtnRegistrar)
-        Me.Controls.Add(Me.txt_cod_postal)
-        Me.Controls.Add(Me.txt_nro_calle)
-        Me.Controls.Add(Me.txt_calle)
-        Me.Controls.Add(Me.txt_nro_cuil)
-        Me.Controls.Add(Me.txt_nombre_club)
-        Me.Controls.Add(Me.txt_siglas)
+        Me.Controls.Add(Me.BtnActualizar)
+        Me.Controls.Add(Me.txt_puntaje_empate)
+        Me.Controls.Add(Me.txt_puntaje_victoria)
+        Me.Controls.Add(Me.txt_fecha_fin)
+        Me.Controls.Add(Me.txt_fecha_inicio)
+        Me.Controls.Add(Me.txt_nombre)
+        Me.Controls.Add(Me.txt_anio)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -253,22 +264,23 @@ Partial Class FormActualizarCampeonato
 
     End Sub
 
-    Friend WithEvents cmb_id_estado_club As ComboBox_01
+    Friend WithEvents cmb_id_estado_campeonato As ComboBox_01
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents BtnCancelar As Button
-    Friend WithEvents BtnRegistrar As Button
-    Friend WithEvents txt_cod_postal As MaskedTextBox_01
-    Friend WithEvents txt_nro_calle As MaskedTextBox_01
-    Friend WithEvents txt_calle As MaskedTextBox_01
-    Friend WithEvents txt_nro_cuil As MaskedTextBox_01
-    Friend WithEvents txt_nombre_club As MaskedTextBox_01
-    Friend WithEvents txt_siglas As MaskedTextBox_01
+    Friend WithEvents BtnActualizar As Button
+    Friend WithEvents txt_puntaje_empate As MaskedTextBox_01
+    Friend WithEvents txt_puntaje_victoria As MaskedTextBox_01
+    Friend WithEvents txt_fecha_fin As MaskedTextBox_01
+    Friend WithEvents txt_fecha_inicio As MaskedTextBox_01
+    Friend WithEvents txt_nombre As MaskedTextBox_01
+    Friend WithEvents txt_anio As MaskedTextBox_01
     Friend WithEvents Label6 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox_011 As ComboBox_01
+    Friend WithEvents BtnBuscar As Button
+    Friend WithEvents txt_id As MaskedTextBox_01
 End Class

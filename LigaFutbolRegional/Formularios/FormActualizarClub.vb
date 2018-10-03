@@ -18,9 +18,11 @@
         'Else
         'Se dispara en el objeto negocio (usuarios) el método de insertar datos
         Me._Club.modificar(txt_id.Text)
-        MsgBox("Se grabó exitosamente")
-            'se recarga la grilla
-            Me.cargar_grilla()
+        MsgBox("Se modifico exitosamente")
+        'se recarga la grilla
+        Me.cargar_grilla()
+        Me._TE.blanquear_objetos(Me)
+        Me.txt_id.Focus()
         'End If
         'FormClubes.ClubFutbolTableAdapter.Fill(FormClubes.CampeonatoPavDataSet1.ClubFutbol)
 

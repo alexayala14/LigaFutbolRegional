@@ -1,0 +1,19 @@
+hecho
+jugador	select
+	modificar
+	eliminar
+	registrar
+
+arbitro	modificar (no se por que cuando busco me setea el id a 0)(solucionado)
+	select
+	eliminar
+	registrar (Falta ver por que me tiro el id 6)
+se hizo panel deslizable de reporte y estadisticas
+ya esta un modelo de reporte
+
+Hacer que codigo postal sea combo box (mas adelante)
+Cambiar los datos de las tablegripview (mas adelante)
+Cambiar los datos de fecha o configuracion regional(mas adelante)
+
+
+liniea 150 Arbitro validar comboBox

@@ -21,6 +21,8 @@
             MsgBox("Se grabó exitosamente")
             'se recarga la grilla
             Me.cargar_grilla()
+            Me._TE.blanquear_objetos(Me)
+            Me.txt_siglas.Focus()
         End If
         'FormClubes.ClubFutbolTableAdapter.Fill(FormClubes.CampeonatoPavDataSet1.ClubFutbol)
 

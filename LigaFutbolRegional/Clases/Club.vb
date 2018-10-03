@@ -46,14 +46,9 @@
             Return transferir_al_front_end(controles)
         End If
     End Function
-    'método privado de transferencia de datos desde el negocio (Club) al front end (formulario)
-    'parámetro de entrada/salida: el conjunto de objetos de formulario. 
-    'recordar que los parametros definidos con ByRef son de entrada/salida, esto es: que todo lo que al 
-    'parametro se le procese dentro de la función también se le realizará al objeto que esta puesto 
-    'como recurso  en el  parámetro. 
+
     Private Function transferir_al_front_end(ByRef controles As Object) As estado_transferencia
-        'se analiza los objetos del formulario para saber sobre cual se actuará.
-        'se recorre los objetos con for each
+
         For Each obj In controles.Controls
             'se pregunta por el nombre del tipo de objeto y si es MaskedTextBox_01 se procesa por el 
             'valor de la propiedad nombre_campo.
@@ -101,9 +96,7 @@
     'como recurso  en el  parámetro. 
     Private Function transferir_a_la_clase(ByRef controles As Object) As estado_transferencia
         For Each obj In controles.Controls
-            'Se pregunta si el objeto encontrada es validable.
-            'Se valida sí el dato de entrada contiene valor o es vacío. Por el caso de que sea vacío
-            'se emite un mensaje de error y se ubica el curosr en ese objeto en el formulario
+
             If obj.GetType().Name = "MaskedTextBox_01" Then
                 If obj.validable = True Then
                     If obj.text = "" Then
@@ -115,8 +108,7 @@
                         Return estado_transferencia.datosErroneos
                     End If
                 End If
-                'Se transfier el contenido del objeto a la variable loca del negocio que coincide con la
-                'propiedad que es imagen de un nombre de campo de la tabla
+
                 Select Case obj.nombre_campo
                     'Case "id_club"
                     '    _id_club = obj.Text

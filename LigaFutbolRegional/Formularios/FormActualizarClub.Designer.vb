@@ -24,16 +24,9 @@ Partial Class FormActualizarClub
     Private Sub InitializeComponent()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnActualizar = New System.Windows.Forms.Button()
-        Me.cmb_id_estado_club = New LigaFutbolRegional.ComboBox_01()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txt_cod_postal = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.txt_nro_calle = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.txt_calle = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.txt_nro_cuil = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.txt_nombre_club = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.txt_siglas = New LigaFutbolRegional.MaskedTextBox_01()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -41,6 +34,13 @@ Partial Class FormActualizarClub
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.txt_id = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.cmb_id_estado_club = New LigaFutbolRegional.ComboBox_01()
+        Me.txt_cod_postal = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_nro_calle = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_calle = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_nro_cuil = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_nombre_club = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_siglas = New LigaFutbolRegional.MaskedTextBox_01()
         Me.SuspendLayout()
         '
         'BtnCancelar
@@ -62,17 +62,6 @@ Partial Class FormActualizarClub
         Me.BtnActualizar.TabIndex = 53
         Me.BtnActualizar.Text = "Actualizar"
         Me.BtnActualizar.UseVisualStyleBackColor = True
-        '
-        'cmb_id_estado_club
-        '
-        Me.cmb_id_estado_club.FormattingEnabled = True
-        Me.cmb_id_estado_club.Location = New System.Drawing.Point(94, 234)
-        Me.cmb_id_estado_club.Name = "cmb_id_estado_club"
-        Me.cmb_id_estado_club.nombre_campo = "id_estado_club"
-        Me.cmb_id_estado_club.nombre_tabla = "ClubFutbol"
-        Me.cmb_id_estado_club.Size = New System.Drawing.Size(55, 21)
-        Me.cmb_id_estado_club.TabIndex = 70
-        Me.cmb_id_estado_club.validable = True
         '
         'Label9
         '
@@ -100,67 +89,6 @@ Partial Class FormActualizarClub
         Me.Label7.Size = New System.Drawing.Size(25, 13)
         Me.Label7.TabIndex = 67
         Me.Label7.Text = "N° :"
-        '
-        'txt_cod_postal
-        '
-        Me.txt_cod_postal.Location = New System.Drawing.Point(94, 204)
-        Me.txt_cod_postal.Name = "txt_cod_postal"
-        Me.txt_cod_postal.nombre_campo = "cod_postal"
-        Me.txt_cod_postal.nombre_tabla = "ClubFutbol"
-        Me.txt_cod_postal.Size = New System.Drawing.Size(100, 20)
-        Me.txt_cod_postal.TabIndex = 66
-        Me.txt_cod_postal.validable = True
-        Me.txt_cod_postal.ValidatingType = GetType(Integer)
-        '
-        'txt_nro_calle
-        '
-        Me.txt_nro_calle.Location = New System.Drawing.Point(94, 178)
-        Me.txt_nro_calle.Name = "txt_nro_calle"
-        Me.txt_nro_calle.nombre_campo = "nro_calle"
-        Me.txt_nro_calle.nombre_tabla = "ClubFutbol"
-        Me.txt_nro_calle.Size = New System.Drawing.Size(100, 20)
-        Me.txt_nro_calle.TabIndex = 65
-        Me.txt_nro_calle.validable = True
-        '
-        'txt_calle
-        '
-        Me.txt_calle.Location = New System.Drawing.Point(94, 152)
-        Me.txt_calle.Name = "txt_calle"
-        Me.txt_calle.nombre_campo = "calle"
-        Me.txt_calle.nombre_tabla = "ClubFutbol"
-        Me.txt_calle.Size = New System.Drawing.Size(191, 20)
-        Me.txt_calle.TabIndex = 64
-        Me.txt_calle.validable = True
-        '
-        'txt_nro_cuil
-        '
-        Me.txt_nro_cuil.Location = New System.Drawing.Point(94, 126)
-        Me.txt_nro_cuil.Name = "txt_nro_cuil"
-        Me.txt_nro_cuil.nombre_campo = "nro_cuil"
-        Me.txt_nro_cuil.nombre_tabla = "ClubFutbol"
-        Me.txt_nro_cuil.Size = New System.Drawing.Size(191, 20)
-        Me.txt_nro_cuil.TabIndex = 63
-        Me.txt_nro_cuil.validable = True
-        '
-        'txt_nombre_club
-        '
-        Me.txt_nombre_club.Location = New System.Drawing.Point(94, 92)
-        Me.txt_nombre_club.Name = "txt_nombre_club"
-        Me.txt_nombre_club.nombre_campo = "nombre_club"
-        Me.txt_nombre_club.nombre_tabla = "ClubFutbol"
-        Me.txt_nombre_club.Size = New System.Drawing.Size(191, 20)
-        Me.txt_nombre_club.TabIndex = 62
-        Me.txt_nombre_club.validable = True
-        '
-        'txt_siglas
-        '
-        Me.txt_siglas.Location = New System.Drawing.Point(94, 60)
-        Me.txt_siglas.Name = "txt_siglas"
-        Me.txt_siglas.nombre_campo = "siglas"
-        Me.txt_siglas.nombre_tabla = "ClubFutbol"
-        Me.txt_siglas.Size = New System.Drawing.Size(100, 20)
-        Me.txt_siglas.TabIndex = 61
-        Me.txt_siglas.validable = True
         '
         'Label6
         '
@@ -226,6 +154,78 @@ Partial Class FormActualizarClub
         Me.txt_id.Size = New System.Drawing.Size(100, 20)
         Me.txt_id.TabIndex = 74
         Me.txt_id.validable = False
+        '
+        'cmb_id_estado_club
+        '
+        Me.cmb_id_estado_club.FormattingEnabled = True
+        Me.cmb_id_estado_club.Location = New System.Drawing.Point(94, 234)
+        Me.cmb_id_estado_club.Name = "cmb_id_estado_club"
+        Me.cmb_id_estado_club.nombre_campo = "id_estado_club"
+        Me.cmb_id_estado_club.nombre_tabla = "ClubFutbol"
+        Me.cmb_id_estado_club.Size = New System.Drawing.Size(55, 21)
+        Me.cmb_id_estado_club.TabIndex = 70
+        Me.cmb_id_estado_club.validable = True
+        '
+        'txt_cod_postal
+        '
+        Me.txt_cod_postal.Location = New System.Drawing.Point(94, 204)
+        Me.txt_cod_postal.Name = "txt_cod_postal"
+        Me.txt_cod_postal.nombre_campo = "cod_postal"
+        Me.txt_cod_postal.nombre_tabla = "ClubFutbol"
+        Me.txt_cod_postal.Size = New System.Drawing.Size(100, 20)
+        Me.txt_cod_postal.TabIndex = 66
+        Me.txt_cod_postal.validable = True
+        Me.txt_cod_postal.ValidatingType = GetType(Integer)
+        '
+        'txt_nro_calle
+        '
+        Me.txt_nro_calle.Location = New System.Drawing.Point(94, 178)
+        Me.txt_nro_calle.Name = "txt_nro_calle"
+        Me.txt_nro_calle.nombre_campo = "nro_calle"
+        Me.txt_nro_calle.nombre_tabla = "ClubFutbol"
+        Me.txt_nro_calle.Size = New System.Drawing.Size(100, 20)
+        Me.txt_nro_calle.TabIndex = 65
+        Me.txt_nro_calle.validable = True
+        '
+        'txt_calle
+        '
+        Me.txt_calle.Location = New System.Drawing.Point(94, 152)
+        Me.txt_calle.Name = "txt_calle"
+        Me.txt_calle.nombre_campo = "calle"
+        Me.txt_calle.nombre_tabla = "ClubFutbol"
+        Me.txt_calle.Size = New System.Drawing.Size(191, 20)
+        Me.txt_calle.TabIndex = 64
+        Me.txt_calle.validable = True
+        '
+        'txt_nro_cuil
+        '
+        Me.txt_nro_cuil.Location = New System.Drawing.Point(94, 126)
+        Me.txt_nro_cuil.Name = "txt_nro_cuil"
+        Me.txt_nro_cuil.nombre_campo = "nro_cuil"
+        Me.txt_nro_cuil.nombre_tabla = "ClubFutbol"
+        Me.txt_nro_cuil.Size = New System.Drawing.Size(191, 20)
+        Me.txt_nro_cuil.TabIndex = 63
+        Me.txt_nro_cuil.validable = True
+        '
+        'txt_nombre_club
+        '
+        Me.txt_nombre_club.Location = New System.Drawing.Point(94, 92)
+        Me.txt_nombre_club.Name = "txt_nombre_club"
+        Me.txt_nombre_club.nombre_campo = "nombre_club"
+        Me.txt_nombre_club.nombre_tabla = "ClubFutbol"
+        Me.txt_nombre_club.Size = New System.Drawing.Size(191, 20)
+        Me.txt_nombre_club.TabIndex = 62
+        Me.txt_nombre_club.validable = True
+        '
+        'txt_siglas
+        '
+        Me.txt_siglas.Location = New System.Drawing.Point(94, 60)
+        Me.txt_siglas.Name = "txt_siglas"
+        Me.txt_siglas.nombre_campo = "siglas"
+        Me.txt_siglas.nombre_tabla = "ClubFutbol"
+        Me.txt_siglas.Size = New System.Drawing.Size(100, 20)
+        Me.txt_siglas.TabIndex = 61
+        Me.txt_siglas.validable = True
         '
         'FormActualizarClub
         '

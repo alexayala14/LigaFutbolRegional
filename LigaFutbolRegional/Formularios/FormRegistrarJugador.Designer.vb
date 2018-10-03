@@ -24,15 +24,15 @@ Partial Class FormRegistrarJugador
     Private Sub InitializeComponent()
         Me.BtnRegistrar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.ComboBox_012 = New LigaFutbolRegional.ComboBox_01()
-        Me.ComboBox_011 = New LigaFutbolRegional.ComboBox_01()
-        Me.MaskedTextBox_015 = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.MaskedTextBox_014 = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.MaskedTextBox_013 = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.MaskedTextBox_012 = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.MaskedTextBox_011 = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.cmb_id_estado_club = New LigaFutbolRegional.ComboBox_01()
-        Me.txt_siglas = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_id_posicion_preferente = New LigaFutbolRegional.ComboBox_01()
+        Me.txt_cod_postal = New LigaFutbolRegional.ComboBox_01()
+        Me.txt_nro_calle = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_calle = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_fecha_nacimiento = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_apellido = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.txt_nombre = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.cmb_tipo_doc = New LigaFutbolRegional.ComboBox_01()
+        Me.txt_dni = New LigaFutbolRegional.MaskedTextBox_01()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -64,98 +64,98 @@ Partial Class FormRegistrarJugador
         Me.BtnCancelar.Text = "Cancelar"
         Me.BtnCancelar.UseVisualStyleBackColor = True
         '
-        'ComboBox_012
+        'txt_id_posicion_preferente
         '
-        Me.ComboBox_012.FormattingEnabled = True
-        Me.ComboBox_012.Location = New System.Drawing.Point(151, 263)
-        Me.ComboBox_012.Name = "ComboBox_012"
-        Me.ComboBox_012.nombre_campo = "id_estado_club"
-        Me.ComboBox_012.nombre_tabla = "ClubFutbol"
-        Me.ComboBox_012.Size = New System.Drawing.Size(73, 21)
-        Me.ComboBox_012.TabIndex = 102
-        Me.ComboBox_012.validable = True
+        Me.txt_id_posicion_preferente.FormattingEnabled = True
+        Me.txt_id_posicion_preferente.Location = New System.Drawing.Point(151, 263)
+        Me.txt_id_posicion_preferente.Name = "txt_id_posicion_preferente"
+        Me.txt_id_posicion_preferente.nombre_campo = "id_posicion_preferente"
+        Me.txt_id_posicion_preferente.nombre_tabla = "Jugador"
+        Me.txt_id_posicion_preferente.Size = New System.Drawing.Size(73, 21)
+        Me.txt_id_posicion_preferente.TabIndex = 102
+        Me.txt_id_posicion_preferente.validable = True
         '
-        'ComboBox_011
+        'txt_cod_postal
         '
-        Me.ComboBox_011.FormattingEnabled = True
-        Me.ComboBox_011.Location = New System.Drawing.Point(151, 233)
-        Me.ComboBox_011.Name = "ComboBox_011"
-        Me.ComboBox_011.nombre_campo = "id_estado_club"
-        Me.ComboBox_011.nombre_tabla = "ClubFutbol"
-        Me.ComboBox_011.Size = New System.Drawing.Size(73, 21)
-        Me.ComboBox_011.TabIndex = 101
-        Me.ComboBox_011.validable = True
+        Me.txt_cod_postal.FormattingEnabled = True
+        Me.txt_cod_postal.Location = New System.Drawing.Point(151, 233)
+        Me.txt_cod_postal.Name = "txt_cod_postal"
+        Me.txt_cod_postal.nombre_campo = "cod_postal"
+        Me.txt_cod_postal.nombre_tabla = "Jugador"
+        Me.txt_cod_postal.Size = New System.Drawing.Size(73, 21)
+        Me.txt_cod_postal.TabIndex = 101
+        Me.txt_cod_postal.validable = True
         '
-        'MaskedTextBox_015
+        'txt_nro_calle
         '
-        Me.MaskedTextBox_015.Location = New System.Drawing.Point(151, 207)
-        Me.MaskedTextBox_015.Name = "MaskedTextBox_015"
-        Me.MaskedTextBox_015.nombre_campo = "siglas"
-        Me.MaskedTextBox_015.nombre_tabla = "ClubFutbol"
-        Me.MaskedTextBox_015.Size = New System.Drawing.Size(100, 20)
-        Me.MaskedTextBox_015.TabIndex = 100
-        Me.MaskedTextBox_015.validable = True
+        Me.txt_nro_calle.Location = New System.Drawing.Point(151, 207)
+        Me.txt_nro_calle.Name = "txt_nro_calle"
+        Me.txt_nro_calle.nombre_campo = "nro_calle"
+        Me.txt_nro_calle.nombre_tabla = "Jugador"
+        Me.txt_nro_calle.Size = New System.Drawing.Size(100, 20)
+        Me.txt_nro_calle.TabIndex = 100
+        Me.txt_nro_calle.validable = True
         '
-        'MaskedTextBox_014
+        'txt_calle
         '
-        Me.MaskedTextBox_014.Location = New System.Drawing.Point(151, 181)
-        Me.MaskedTextBox_014.Name = "MaskedTextBox_014"
-        Me.MaskedTextBox_014.nombre_campo = "siglas"
-        Me.MaskedTextBox_014.nombre_tabla = "ClubFutbol"
-        Me.MaskedTextBox_014.Size = New System.Drawing.Size(191, 20)
-        Me.MaskedTextBox_014.TabIndex = 99
-        Me.MaskedTextBox_014.validable = True
+        Me.txt_calle.Location = New System.Drawing.Point(151, 181)
+        Me.txt_calle.Name = "txt_calle"
+        Me.txt_calle.nombre_campo = "calle"
+        Me.txt_calle.nombre_tabla = "Jugador"
+        Me.txt_calle.Size = New System.Drawing.Size(191, 20)
+        Me.txt_calle.TabIndex = 99
+        Me.txt_calle.validable = True
         '
-        'MaskedTextBox_013
+        'txt_fecha_nacimiento
         '
-        Me.MaskedTextBox_013.Location = New System.Drawing.Point(151, 147)
-        Me.MaskedTextBox_013.Name = "MaskedTextBox_013"
-        Me.MaskedTextBox_013.nombre_campo = "siglas"
-        Me.MaskedTextBox_013.nombre_tabla = "ClubFutbol"
-        Me.MaskedTextBox_013.Size = New System.Drawing.Size(100, 20)
-        Me.MaskedTextBox_013.TabIndex = 98
-        Me.MaskedTextBox_013.validable = True
+        Me.txt_fecha_nacimiento.Location = New System.Drawing.Point(151, 147)
+        Me.txt_fecha_nacimiento.Name = "txt_fecha_nacimiento"
+        Me.txt_fecha_nacimiento.nombre_campo = "fecha_nacimiento"
+        Me.txt_fecha_nacimiento.nombre_tabla = "Jugador"
+        Me.txt_fecha_nacimiento.Size = New System.Drawing.Size(100, 20)
+        Me.txt_fecha_nacimiento.TabIndex = 98
+        Me.txt_fecha_nacimiento.validable = True
         '
-        'MaskedTextBox_012
+        'txt_apellido
         '
-        Me.MaskedTextBox_012.Location = New System.Drawing.Point(151, 112)
-        Me.MaskedTextBox_012.Name = "MaskedTextBox_012"
-        Me.MaskedTextBox_012.nombre_campo = "siglas"
-        Me.MaskedTextBox_012.nombre_tabla = "ClubFutbol"
-        Me.MaskedTextBox_012.Size = New System.Drawing.Size(191, 20)
-        Me.MaskedTextBox_012.TabIndex = 97
-        Me.MaskedTextBox_012.validable = True
+        Me.txt_apellido.Location = New System.Drawing.Point(151, 112)
+        Me.txt_apellido.Name = "txt_apellido"
+        Me.txt_apellido.nombre_campo = "apellido"
+        Me.txt_apellido.nombre_tabla = "Jugador"
+        Me.txt_apellido.Size = New System.Drawing.Size(191, 20)
+        Me.txt_apellido.TabIndex = 97
+        Me.txt_apellido.validable = True
         '
-        'MaskedTextBox_011
+        'txt_nombre
         '
-        Me.MaskedTextBox_011.Location = New System.Drawing.Point(151, 78)
-        Me.MaskedTextBox_011.Name = "MaskedTextBox_011"
-        Me.MaskedTextBox_011.nombre_campo = "siglas"
-        Me.MaskedTextBox_011.nombre_tabla = "ClubFutbol"
-        Me.MaskedTextBox_011.Size = New System.Drawing.Size(191, 20)
-        Me.MaskedTextBox_011.TabIndex = 96
-        Me.MaskedTextBox_011.validable = True
+        Me.txt_nombre.Location = New System.Drawing.Point(151, 78)
+        Me.txt_nombre.Name = "txt_nombre"
+        Me.txt_nombre.nombre_campo = "nombre"
+        Me.txt_nombre.nombre_tabla = "Jugador"
+        Me.txt_nombre.Size = New System.Drawing.Size(191, 20)
+        Me.txt_nombre.TabIndex = 96
+        Me.txt_nombre.validable = True
         '
-        'cmb_id_estado_club
+        'cmb_tipo_doc
         '
-        Me.cmb_id_estado_club.FormattingEnabled = True
-        Me.cmb_id_estado_club.Location = New System.Drawing.Point(151, 16)
-        Me.cmb_id_estado_club.Name = "cmb_id_estado_club"
-        Me.cmb_id_estado_club.nombre_campo = "id_estado_club"
-        Me.cmb_id_estado_club.nombre_tabla = "ClubFutbol"
-        Me.cmb_id_estado_club.Size = New System.Drawing.Size(73, 21)
-        Me.cmb_id_estado_club.TabIndex = 95
-        Me.cmb_id_estado_club.validable = True
+        Me.cmb_tipo_doc.FormattingEnabled = True
+        Me.cmb_tipo_doc.Location = New System.Drawing.Point(151, 16)
+        Me.cmb_tipo_doc.Name = "cmb_tipo_doc"
+        Me.cmb_tipo_doc.nombre_campo = "tipo_doc"
+        Me.cmb_tipo_doc.nombre_tabla = "Jugador"
+        Me.cmb_tipo_doc.Size = New System.Drawing.Size(73, 21)
+        Me.cmb_tipo_doc.TabIndex = 95
+        Me.cmb_tipo_doc.validable = True
         '
-        'txt_siglas
+        'txt_dni
         '
-        Me.txt_siglas.Location = New System.Drawing.Point(151, 46)
-        Me.txt_siglas.Name = "txt_siglas"
-        Me.txt_siglas.nombre_campo = "siglas"
-        Me.txt_siglas.nombre_tabla = "ClubFutbol"
-        Me.txt_siglas.Size = New System.Drawing.Size(100, 20)
-        Me.txt_siglas.TabIndex = 94
-        Me.txt_siglas.validable = True
+        Me.txt_dni.Location = New System.Drawing.Point(151, 46)
+        Me.txt_dni.Name = "txt_dni"
+        Me.txt_dni.nombre_campo = "dni"
+        Me.txt_dni.nombre_tabla = "Jugador"
+        Me.txt_dni.Size = New System.Drawing.Size(100, 20)
+        Me.txt_dni.TabIndex = 94
+        Me.txt_dni.validable = True
         '
         'Label9
         '
@@ -244,15 +244,15 @@ Partial Class FormRegistrarJugador
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkCyan
         Me.ClientSize = New System.Drawing.Size(411, 354)
-        Me.Controls.Add(Me.ComboBox_012)
-        Me.Controls.Add(Me.ComboBox_011)
-        Me.Controls.Add(Me.MaskedTextBox_015)
-        Me.Controls.Add(Me.MaskedTextBox_014)
-        Me.Controls.Add(Me.MaskedTextBox_013)
-        Me.Controls.Add(Me.MaskedTextBox_012)
-        Me.Controls.Add(Me.MaskedTextBox_011)
-        Me.Controls.Add(Me.cmb_id_estado_club)
-        Me.Controls.Add(Me.txt_siglas)
+        Me.Controls.Add(Me.txt_id_posicion_preferente)
+        Me.Controls.Add(Me.txt_cod_postal)
+        Me.Controls.Add(Me.txt_nro_calle)
+        Me.Controls.Add(Me.txt_calle)
+        Me.Controls.Add(Me.txt_fecha_nacimiento)
+        Me.Controls.Add(Me.txt_apellido)
+        Me.Controls.Add(Me.txt_nombre)
+        Me.Controls.Add(Me.cmb_tipo_doc)
+        Me.Controls.Add(Me.txt_dni)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -277,15 +277,15 @@ Partial Class FormRegistrarJugador
     End Sub
     Friend WithEvents BtnRegistrar As Button
     Friend WithEvents BtnCancelar As Button
-    Friend WithEvents ComboBox_012 As ComboBox_01
-    Friend WithEvents ComboBox_011 As ComboBox_01
-    Friend WithEvents MaskedTextBox_015 As MaskedTextBox_01
-    Friend WithEvents MaskedTextBox_014 As MaskedTextBox_01
-    Friend WithEvents MaskedTextBox_013 As MaskedTextBox_01
-    Friend WithEvents MaskedTextBox_012 As MaskedTextBox_01
-    Friend WithEvents MaskedTextBox_011 As MaskedTextBox_01
-    Friend WithEvents cmb_id_estado_club As ComboBox_01
-    Friend WithEvents txt_siglas As MaskedTextBox_01
+    Friend WithEvents txt_id_posicion_preferente As ComboBox_01
+    Friend WithEvents txt_cod_postal As ComboBox_01
+    Friend WithEvents txt_nro_calle As MaskedTextBox_01
+    Friend WithEvents txt_calle As MaskedTextBox_01
+    Friend WithEvents txt_fecha_nacimiento As MaskedTextBox_01
+    Friend WithEvents txt_apellido As MaskedTextBox_01
+    Friend WithEvents txt_nombre As MaskedTextBox_01
+    Friend WithEvents cmb_tipo_doc As ComboBox_01
+    Friend WithEvents txt_dni As MaskedTextBox_01
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
