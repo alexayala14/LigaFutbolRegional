@@ -40,6 +40,7 @@ Partial Class FormInscripcion
         Me.cmb_estado = New LigaFutbolRegional.ComboBox_01()
         Me.cmb_club = New LigaFutbolRegional.ComboBox_01()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.MaskedTextBox_011 = New LigaFutbolRegional.MaskedTextBox_01()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -113,7 +114,7 @@ Partial Class FormInscripcion
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(76, 56)
+        Me.Label5.Location = New System.Drawing.Point(24, 62)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(29, 13)
         Me.Label5.TabIndex = 132
@@ -140,10 +141,11 @@ Partial Class FormInscripcion
         'MaskedTextBox_012
         '
         Me.MaskedTextBox_012.Location = New System.Drawing.Point(110, 187)
+        Me.MaskedTextBox_012.Mask = "00/00/0000"
         Me.MaskedTextBox_012.Name = "MaskedTextBox_012"
         Me.MaskedTextBox_012.nombre_campo = "fechaCierre"
         Me.MaskedTextBox_012.nombre_tabla = "Inscripcion"
-        Me.MaskedTextBox_012.Size = New System.Drawing.Size(100, 20)
+        Me.MaskedTextBox_012.Size = New System.Drawing.Size(76, 20)
         Me.MaskedTextBox_012.TabIndex = 138
         Me.MaskedTextBox_012.validable = True
         '
@@ -161,7 +163,7 @@ Partial Class FormInscripcion
         'cmb_año
         '
         Me.cmb_año.FormattingEnabled = True
-        Me.cmb_año.Location = New System.Drawing.Point(113, 53)
+        Me.cmb_año.Location = New System.Drawing.Point(61, 59)
         Me.cmb_año.Name = "cmb_año"
         Me.cmb_año.nombre_campo = "anio_campeonato"
         Me.cmb_año.nombre_tabla = "Inscripcion"
@@ -172,12 +174,14 @@ Partial Class FormInscripcion
         'txt_fecha
         '
         Me.txt_fecha.Location = New System.Drawing.Point(110, 157)
+        Me.txt_fecha.Mask = "00/00/0000"
         Me.txt_fecha.Name = "txt_fecha"
         Me.txt_fecha.nombre_campo = "fechaInscripcion"
         Me.txt_fecha.nombre_tabla = "Inscripcion"
-        Me.txt_fecha.Size = New System.Drawing.Size(100, 20)
+        Me.txt_fecha.Size = New System.Drawing.Size(76, 20)
         Me.txt_fecha.TabIndex = 119
         Me.txt_fecha.validable = True
+        Me.txt_fecha.ValidatingType = GetType(Date)
         '
         'cmb_estado
         '
@@ -212,12 +216,23 @@ Partial Class FormInscripcion
         Me.DataGridView1.Size = New System.Drawing.Size(452, 205)
         Me.DataGridView1.TabIndex = 140
         '
+        'MaskedTextBox_011
+        '
+        Me.MaskedTextBox_011.Location = New System.Drawing.Point(168, 62)
+        Me.MaskedTextBox_011.Name = "MaskedTextBox_011"
+        Me.MaskedTextBox_011.nombre_campo = "anio_campeonato"
+        Me.MaskedTextBox_011.nombre_tabla = "Inscripcion"
+        Me.MaskedTextBox_011.Size = New System.Drawing.Size(100, 20)
+        Me.MaskedTextBox_011.TabIndex = 141
+        Me.MaskedTextBox_011.validable = False
+        '
         'FormInscripcion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkCyan
         Me.ClientSize = New System.Drawing.Size(515, 476)
+        Me.Controls.Add(Me.MaskedTextBox_011)
         Me.Controls.Add(Me.btnBaja)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label2)
@@ -265,4 +280,5 @@ Partial Class FormInscripcion
     Friend WithEvents Label2 As Label
     Friend WithEvents MaskedTextBox_012 As MaskedTextBox_01
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents MaskedTextBox_011 As MaskedTextBox_01
 End Class

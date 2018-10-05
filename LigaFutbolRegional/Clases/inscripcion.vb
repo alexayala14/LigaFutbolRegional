@@ -18,8 +18,8 @@
     Public Property anio_campeonato As Integer
     Public Property id_club As Integer
     Public Property estado As Integer
-    Public Property fechaInscripcion As Date
-    Public Property fechaCierre As Date
+    Public Property fechaInscripcion As String
+    Public Property FechaCierre As String
 
     Public Function transferir(ByRef controles As Object, ByVal a_donde_transferior As a_donde) As estado_transferencia
         If a_donde_transferior = a_donde.a_la_clase Then
@@ -28,6 +28,24 @@
             Return transferir_al_front_end(controles)
         End If
     End Function
+
+    Public Sub transferir_anio(ByRef controles As Object)
+        For Each obj In controles.Controls
+            If obj.GetType().Name = "ComboBox_01" Then
+
+                Select Case obj.nombre_campo
+                    Case "anio_campeonato"
+                        obj.SelectedValue = _anio_campeonato
+                End Select
+            End If
+        Next
+    End Sub
+
+    Public Sub buscar_anio(ByVal id_camp As Integer)
+        Dim tabla As New DataTable
+        tabla = _BD.leo_tabla("SELECT anio FROM Campeonato WHERE id_campeonato = " & id_camp)
+        _anio_campeonato = tabla.Rows(0)("anio")
+    End Sub
 
     Private Function transferir_al_front_end(ByRef controles As Object) As estado_transferencia
 
@@ -38,7 +56,7 @@
                     Case "fechaInscripcion"
                         obj.Text = _fechaInscripcion
                     Case "fechaCierre"
-                        obj.Text = _fechaCierre
+                        obj.Text = _FechaCierre
                 End Select
             End If
             If obj.GetType().Name = "ComboBox_01" Then
@@ -77,7 +95,7 @@
                     Case "fechaInscripcion"
                         _fechaInscripcion = obj.Text
                     Case "fechaCierre"
-                        _fechaCierre = obj.Text
+                        _FechaCierre = obj.Text
 
                 End Select
             End If
@@ -122,7 +140,7 @@
         sql &= "," & _id_club & ""
         sql &= "," & _estado & ""
         sql &= ",'" & _fechaInscripcion & "'"
-        sql &= ",'" & _fechaCierre & "'"
+        sql &= ",'" & _FechaCierre & "'"
         sql &= ")"
         Me._BD.INS_MOD_BOR(sql)
     End Sub

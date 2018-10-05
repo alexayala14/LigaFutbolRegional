@@ -12,7 +12,9 @@
 
     Private Sub FormInscripcion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cmb_campeonato.cargar(BD.leo_tabla("SELECT * FROM Campeonato"), "id_campeonato", "nombre")
-        cmb_año.cargar(BD.leo_tabla("SELECT * FROM Campeonato WHERE id_estado_campeonato = 3"), "anio", "anio")
+        'inscrip.buscar_anio(cmb_campeonato.SelectedValue)
+        'inscrip.transferir_anio(Me)
+        cmb_año.cargar(BD.leo_tabla("SELECT * FROM Campeonato WHERE id_estado_campeonato = 3"), "id_campeonato", "anio", "anio")
         cmb_club.cargar(BD.leo_tabla("SELECT * FROM ClubFutbol"), "id_club", "nombre_club")
         cmb_estado.cargar(BD.leo_tabla("SELECT * FROM EstadoInscripcion"), "id_estado", "descripcion")
         cargar_grilla()
@@ -50,6 +52,18 @@
         Me.cargar_grilla()
         'Me.TE.blanquear_objetos(Me)
         Me.cmb_club.Focus()
+
     End Sub
 
+    Private Sub cmb_campeonato_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_campeonato.SelectedIndexChanged
+        ''Dim value As Integer
+        'Dim tabla As New DataTable
+        ''value = Me.cmb_campeonato.SelectedValue()
+        'Dim sql As String = "SELECT * FROM Campeonato WHERE id_campeonato = " & cmb_campeonato.SelectedValue
+        ''tabla = BD.leo_tabla("SELECT * FROM Campeonato WHERE id_campeonato = " & cmb_campeonato.SelectedValue())
+        'tabla = BD.leo_tabla(sql)
+        'cmb_año.cargar(tabla, "anio", "anio")
+        'inscrip.buscar_club(cmb_campeonato.SelectedValue())
+        'inscrip.transferir_club(Me)
+    End Sub
 End Class

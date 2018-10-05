@@ -34,7 +34,7 @@ Partial Class FormActualizarJugador
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnActualizar = New System.Windows.Forms.Button()
         Me.BtnBuscar = New System.Windows.Forms.Button()
-        Me.cmb_id_posicion_preferente = New LigaFutbolRegional.ComboBox_01()
+        Me.cmd_estado_jugador = New LigaFutbolRegional.ComboBox_01()
         Me.cmb_cod_postal = New LigaFutbolRegional.ComboBox_01()
         Me.txt_nro_calle = New LigaFutbolRegional.MaskedTextBox_01()
         Me.txt_calle = New LigaFutbolRegional.MaskedTextBox_01()
@@ -49,11 +49,11 @@ Partial Class FormActualizarJugador
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(77, 286)
+        Me.Label9.Location = New System.Drawing.Point(62, 286)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(65, 13)
+        Me.Label9.Size = New System.Drawing.Size(84, 13)
         Me.Label9.TabIndex = 113
-        Me.Label9.Text = "N° Posicion:"
+        Me.Label9.Text = "Estado Jugador:"
         '
         'Label8
         '
@@ -157,16 +157,16 @@ Partial Class FormActualizarJugador
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
         '
-        'cmb_id_posicion_preferente
+        'cmd_estado_jugador
         '
-        Me.cmb_id_posicion_preferente.FormattingEnabled = True
-        Me.cmb_id_posicion_preferente.Location = New System.Drawing.Point(148, 283)
-        Me.cmb_id_posicion_preferente.Name = "cmb_id_posicion_preferente"
-        Me.cmb_id_posicion_preferente.nombre_campo = "id_posicion_preferente"
-        Me.cmb_id_posicion_preferente.nombre_tabla = "Jugador"
-        Me.cmb_id_posicion_preferente.Size = New System.Drawing.Size(73, 21)
-        Me.cmb_id_posicion_preferente.TabIndex = 122
-        Me.cmb_id_posicion_preferente.validable = True
+        Me.cmd_estado_jugador.FormattingEnabled = True
+        Me.cmd_estado_jugador.Location = New System.Drawing.Point(148, 283)
+        Me.cmd_estado_jugador.Name = "cmd_estado_jugador"
+        Me.cmd_estado_jugador.nombre_campo = "id_estado"
+        Me.cmd_estado_jugador.nombre_tabla = "Jugador"
+        Me.cmd_estado_jugador.Size = New System.Drawing.Size(73, 21)
+        Me.cmd_estado_jugador.TabIndex = 122
+        Me.cmd_estado_jugador.validable = True
         '
         'cmb_cod_postal
         '
@@ -268,7 +268,7 @@ Partial Class FormActualizarJugador
         Me.ClientSize = New System.Drawing.Size(393, 392)
         Me.Controls.Add(Me.lbl_limpiar)
         Me.Controls.Add(Me.BtnBuscar)
-        Me.Controls.Add(Me.cmb_id_posicion_preferente)
+        Me.Controls.Add(Me.cmd_estado_jugador)
         Me.Controls.Add(Me.cmb_cod_postal)
         Me.Controls.Add(Me.txt_nro_calle)
         Me.Controls.Add(Me.txt_calle)
@@ -300,7 +300,7 @@ Partial Class FormActualizarJugador
 
     End Sub
 
-    Friend WithEvents cmb_id_posicion_preferente As ComboBox_01
+    Friend WithEvents cmd_estado_jugador As ComboBox_01
     Friend WithEvents cmb_cod_postal As ComboBox_01
     Friend WithEvents txt_nro_calle As MaskedTextBox_01
     Friend WithEvents txt_calle As MaskedTextBox_01

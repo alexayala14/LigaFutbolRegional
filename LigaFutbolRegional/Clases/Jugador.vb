@@ -31,7 +31,7 @@
     Public Property calle As String
     Public Property nro_calle As Integer
     Public Property cod_postal As Integer
-    Public Property id_posicion_preferente As Integer
+    Public Property id_estado As Integer
 
     'método público que gestiona la transferencia de datos desde el front end (formulario) al negocio (usuarios),
     'como también del negocio al front end. 
@@ -89,8 +89,8 @@
                 Select Case obj.nombre_campo
                     Case "tipo_doc"
                         obj.SelectedValue = _tipo_doc
-                    Case "id_posicion_preferente"
-                        obj.SelectedValue = _id_posicion_preferente
+                    Case "id_estado"
+                        obj.SelectedValue = _id_estado
 
                 End Select
             End If
@@ -137,8 +137,8 @@
                         _nro_calle = obj.Text
                     Case "cod_postal"
                         _cod_postal = obj.Text
-                    Case "id_posicion_preferente"
-                        _id_posicion_preferente = IIf(obj.Text = "", 0, obj.text)
+                    Case "id_estado"
+                        _id_estado = IIf(obj.Text = "", 0, obj.text)
                 End Select
             End If
             'Para ComboBox_01 se aplica la misma mecánica que para MaskedTextBox_01
@@ -151,7 +151,7 @@
                     End If
                 End If
                 _tipo_doc = obj.SelectedValue
-                _id_posicion_preferente = obj.SelectedValue
+                _id_estado = obj.SelectedValue
             End If
         Next
         Return estado_transferencia.ok
@@ -173,7 +173,7 @@
         sql &= ",calle"
         sql &= ",nro_calle"
         sql &= ",cod_postal"
-        sql &= ",id_posicion_preferente) VALUES ("
+        sql &= ",id_estado) VALUES ("
 
         sql &= "" & _tipo_doc
         sql &= "," & _dni & ""
@@ -183,7 +183,7 @@
         sql &= ",'" & _calle & "'"
         sql &= "," & _nro_calle & ""
         sql &= "," & _cod_postal & ""
-        sql &= "," & _id_posicion_preferente & ")"
+        sql &= "," & _id_estado & ")"
         Me._BD.INS_MOD_BOR(sql)
     End Sub
 
@@ -197,7 +197,7 @@
         sql &= ", calle = '" & _calle & "'"
         sql &= ",nro_calle = " & _nro_calle
         sql &= ", cod_postal =" & _cod_postal
-        sql &= ", id_posicion_preferente =" & _id_posicion_preferente
+        sql &= ", id_estado =" & _id_estado
         sql &= "WHERE dni = " & dni
         Me._BD.INS_MOD_BOR(sql)
     End Sub
@@ -213,7 +213,7 @@
         _calle = tabla.Rows(0)("calle")
         _nro_calle = tabla.Rows(0)("nro_calle")
         _cod_postal = tabla.Rows(0)("cod_postal")
-        _id_posicion_preferente = tabla.Rows(0)("id_posicion_preferente")
+        _id_estado = tabla.Rows(0)("id_estado")
 
     End Sub
     'subrutina para borrar un registro

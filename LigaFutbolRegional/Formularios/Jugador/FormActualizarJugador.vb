@@ -24,7 +24,7 @@
 
     Private Sub FormActualizarJugador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cmb_tipo_doc.cargar(_BD.leo_tabla("SELECT * FROM TipoDoc"), "id_tipoDoc", "nombre")
-        Me.cmb_id_posicion_preferente.cargar(_BD.leo_tabla("SELECT * FROM PosicionJugador"), "id_posicion", "nombre")
+        Me.cmd_estado_jugador.cargar(_BD.leo_tabla("SELECT * FROM EstadoJugadorVigencia"), "id_estado", "nombre")
         Me.cmb_cod_postal.cargar(_BD.leo_tabla("SELECT * FROM CodigoPostal"), "id_codPostal", "id_codPostal")
         Me.control_estado_grabacion = estado_grabacion.modificar
     End Sub
