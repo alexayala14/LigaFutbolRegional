@@ -29,23 +29,8 @@
         End If
     End Function
 
-    Public Sub transferir_anio(ByRef controles As Object)
-        For Each obj In controles.Controls
-            If obj.GetType().Name = "ComboBox_01" Then
 
-                Select Case obj.nombre_campo
-                    Case "anio_campeonato"
-                        obj.SelectedValue = _anio_campeonato
-                End Select
-            End If
-        Next
-    End Sub
 
-    Public Sub buscar_anio(ByVal id_camp As Integer)
-        Dim tabla As New DataTable
-        tabla = _BD.leo_tabla("SELECT anio FROM Campeonato WHERE id_campeonato = " & id_camp)
-        _anio_campeonato = tabla.Rows(0)("anio")
-    End Sub
 
     Private Function transferir_al_front_end(ByRef controles As Object) As estado_transferencia
 
@@ -56,7 +41,11 @@
                     Case "fechaInscripcion"
                         obj.Text = _fechaInscripcion
                     Case "fechaCierre"
+
+                        'obj.date("MM/dd/yyyy") = _FechaCierre
+
                         obj.Text = _FechaCierre
+
                 End Select
             End If
             If obj.GetType().Name = "ComboBox_01" Then
@@ -97,6 +86,11 @@
                     Case "fechaCierre"
                         _FechaCierre = obj.Text
 
+                    Case "anio_campeonato"
+                        _anio_campeonato = obj.Text
+
+
+
                 End Select
             End If
             'Para ComboBox_01 se aplica la misma mecánica que para MaskedTextBox_01
@@ -111,8 +105,7 @@
                 Select Case obj.nombre_campo
                     Case "id_campeonato"
                         _id_campeonato = obj.SelectedValue
-                    Case "anio_campeonato"
-                        _anio_campeonato = obj.SelectedValue
+
                     Case "id_club"
                         _id_club = obj.SelectedValue
                     Case "estado"
