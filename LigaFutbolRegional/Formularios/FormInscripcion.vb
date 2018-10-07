@@ -35,10 +35,7 @@
 
     End Sub
 
-    Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
-        TE.blanquear_objetos(Me)
-        cmb_club.Focus()
-    End Sub
+
 
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
 
@@ -94,4 +91,7 @@
 
     End Sub
 
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        JugadoresXCampeonato.Show()
+    End Sub
 End Class

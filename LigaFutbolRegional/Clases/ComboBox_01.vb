@@ -14,9 +14,5 @@
         Me.DisplayMember = descripcion
         Me.ValueMember = pk
     End Sub
-    Public Sub cargar(ByVal tabla As DataTable, ByVal pk1 As String, ByVal pk2 As String, ByVal descripcion As String)
-        Me.DataSource = tabla
-        Me.DisplayMember = descripcion
-        Me.ValueMember = pk1 & pk2
-    End Sub
+
 End Class

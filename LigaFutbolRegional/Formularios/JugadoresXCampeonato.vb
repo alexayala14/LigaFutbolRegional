@@ -29,9 +29,15 @@
 
     End Sub
     Private Sub JugadoresXCampeonato_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim tabla As New DataTable
+
+
         cargarGrilla()
         cargar_combo()
-
+        cmb_campeonato.cargar(_BD.leo_tabla("SELECT DISTINCT C.id_campeonato , nombre  FROM Campeonato C, Inscripcion I WHERE C.id_campeonato = I.id_campeonato"), "id_campeonato", "nombre")
+        tabla = _BD.leo_tabla("SELECT * FROM Inscripcion WHERE id_campeonato = " & cmb_campeonato.SelectedValue)
+        txt_anio_campeonato.Text = tabla.Rows(0)("anio_campeonato")
+        cmb_club.cargar(_BD.leo_tabla("SELECT  C.id_club , nombre_club  FROM ClubFutbol C, Inscripcion I WHERE C.id_club = I.id_club"), "id_club", "nombre_club")
     End Sub
 
 
@@ -64,5 +70,15 @@
         lbl_count.Text = Me.DGV1.Rows.Count - 1
     End Sub
 
+    Private Sub cmb_campeonato_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_campeonato.SelectedIndexChanged
+        Dim tabla As New DataTable
+        If cmb_campeonato.SelectedValue.ToString <> "System.Data.DataRowView" Then
 
+            tabla = _BD.leo_tabla("SELECT * FROM Inscripcion WHERE id_campeonato = " & cmb_campeonato.SelectedValue)
+            txt_anio_campeonato.Text = tabla.Rows(0)("anio_campeonato")
+
+
+
+        End If
+    End Sub
 End Class

@@ -24,6 +24,10 @@ Partial Class JugadoresXCampeonato
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
+        Me.dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nro_camiseta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.posicion_designada = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.DGV2 = New System.Windows.Forms.DataGridView()
         Me.dni2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -38,15 +42,11 @@ Partial Class JugadoresXCampeonato
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nro_camiseta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.posicion_designada = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.ComboBox_011 = New LigaFutbolRegional.ComboBox_01()
+        Me.cmb_club = New LigaFutbolRegional.ComboBox_01()
         Me.cmb_campeonato = New LigaFutbolRegional.ComboBox_01()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.cmb_año = New LigaFutbolRegional.ComboBox_01()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.txt_anio_campeonato = New LigaFutbolRegional.MaskedTextBox_01()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGV2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JugadorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,6 +61,28 @@ Partial Class JugadoresXCampeonato
         Me.DGV1.Name = "DGV1"
         Me.DGV1.Size = New System.Drawing.Size(407, 235)
         Me.DGV1.TabIndex = 5
+        '
+        'dni
+        '
+        Me.dni.HeaderText = "DNI"
+        Me.dni.Name = "dni"
+        '
+        'nombre
+        '
+        Me.nombre.HeaderText = "Nombre"
+        Me.nombre.Name = "nombre"
+        '
+        'nro_camiseta
+        '
+        Me.nro_camiseta.HeaderText = "Nro Camiseta"
+        Me.nro_camiseta.Name = "nro_camiseta"
+        '
+        'posicion_designada
+        '
+        Me.posicion_designada.HeaderText = "Posicion"
+        Me.posicion_designada.Name = "posicion_designada"
+        Me.posicion_designada.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.posicion_designada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
         'DGV2
         '
@@ -172,38 +194,16 @@ Partial Class JugadoresXCampeonato
         Me.Button3.Text = "Borrar"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'dni
+        'cmb_club
         '
-        Me.dni.HeaderText = "DNI"
-        Me.dni.Name = "dni"
-        '
-        'nombre
-        '
-        Me.nombre.HeaderText = "Nombre"
-        Me.nombre.Name = "nombre"
-        '
-        'nro_camiseta
-        '
-        Me.nro_camiseta.HeaderText = "Nro Camiseta"
-        Me.nro_camiseta.Name = "nro_camiseta"
-        '
-        'posicion_designada
-        '
-        Me.posicion_designada.HeaderText = "Posicion"
-        Me.posicion_designada.Name = "posicion_designada"
-        Me.posicion_designada.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.posicion_designada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'ComboBox_011
-        '
-        Me.ComboBox_011.FormattingEnabled = True
-        Me.ComboBox_011.Location = New System.Drawing.Point(310, 13)
-        Me.ComboBox_011.Name = "ComboBox_011"
-        Me.ComboBox_011.nombre_campo = Nothing
-        Me.ComboBox_011.nombre_tabla = Nothing
-        Me.ComboBox_011.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox_011.TabIndex = 9
-        Me.ComboBox_011.validable = False
+        Me.cmb_club.FormattingEnabled = True
+        Me.cmb_club.Location = New System.Drawing.Point(310, 13)
+        Me.cmb_club.Name = "cmb_club"
+        Me.cmb_club.nombre_campo = Nothing
+        Me.cmb_club.nombre_tabla = Nothing
+        Me.cmb_club.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_club.TabIndex = 9
+        Me.cmb_club.validable = False
         '
         'cmb_campeonato
         '
@@ -225,17 +225,6 @@ Partial Class JugadoresXCampeonato
         Me.Label7.TabIndex = 138
         Me.Label7.Text = "Campeonato:"
         '
-        'cmb_año
-        '
-        Me.cmb_año.FormattingEnabled = True
-        Me.cmb_año.Location = New System.Drawing.Point(108, 42)
-        Me.cmb_año.Name = "cmb_año"
-        Me.cmb_año.nombre_campo = "anio_campeonato"
-        Me.cmb_año.nombre_tabla = "Inscripcion"
-        Me.cmb_año.Size = New System.Drawing.Size(100, 21)
-        Me.cmb_año.TabIndex = 137
-        Me.cmb_año.validable = True
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -245,15 +234,25 @@ Partial Class JugadoresXCampeonato
         Me.Label5.TabIndex = 136
         Me.Label5.Text = "Año:"
         '
+        'txt_anio_campeonato
+        '
+        Me.txt_anio_campeonato.Location = New System.Drawing.Point(107, 45)
+        Me.txt_anio_campeonato.Name = "txt_anio_campeonato"
+        Me.txt_anio_campeonato.nombre_campo = "anio_campeonato"
+        Me.txt_anio_campeonato.nombre_tabla = "JugadoresXClubXCampeonato"
+        Me.txt_anio_campeonato.Size = New System.Drawing.Size(100, 20)
+        Me.txt_anio_campeonato.TabIndex = 140
+        Me.txt_anio_campeonato.validable = False
+        '
         'JugadoresXCampeonato
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightSeaGreen
         Me.ClientSize = New System.Drawing.Size(704, 462)
+        Me.Controls.Add(Me.txt_anio_campeonato)
         Me.Controls.Add(Me.cmb_campeonato)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.cmb_año)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -261,7 +260,7 @@ Partial Class JugadoresXCampeonato
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.ComboBox_011)
+        Me.Controls.Add(Me.cmb_club)
         Me.Controls.Add(Me.lbl_count)
         Me.Controls.Add(Me.contador)
         Me.Controls.Add(Me.DGV2)
@@ -285,7 +284,7 @@ Partial Class JugadoresXCampeonato
     Friend WithEvents nombre2 As DataGridViewTextBoxColumn
     Friend WithEvents contador As Label
     Friend WithEvents lbl_count As Label
-    Friend WithEvents ComboBox_011 As ComboBox_01
+    Friend WithEvents cmb_club As ComboBox_01
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
@@ -298,6 +297,6 @@ Partial Class JugadoresXCampeonato
     Friend WithEvents posicion_designada As DataGridViewComboBoxColumn
     Friend WithEvents cmb_campeonato As ComboBox_01
     Friend WithEvents Label7 As Label
-    Friend WithEvents cmb_año As ComboBox_01
     Friend WithEvents Label5 As Label
+    Friend WithEvents txt_anio_campeonato As MaskedTextBox_01
 End Class

@@ -24,7 +24,6 @@ Partial Class FormInscripcion
     Private Sub InitializeComponent()
         Me.btnBaja = New System.Windows.Forms.Button()
         Me.btnAlta = New System.Windows.Forms.Button()
-        Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -62,20 +61,10 @@ Partial Class FormInscripcion
         Me.btnAlta.Text = "Alta"
         Me.btnAlta.UseVisualStyleBackColor = True
         '
-        'BtnNuevo
-        '
-        Me.BtnNuevo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnNuevo.Location = New System.Drawing.Point(398, 26)
-        Me.BtnNuevo.Name = "BtnNuevo"
-        Me.BtnNuevo.Size = New System.Drawing.Size(75, 23)
-        Me.BtnNuevo.TabIndex = 129
-        Me.BtnNuevo.Text = "Nuevo"
-        Me.BtnNuevo.UseVisualStyleBackColor = True
-        '
         'btnBuscar
         '
         Me.btnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnBuscar.Location = New System.Drawing.Point(398, 69)
+        Me.btnBuscar.Location = New System.Drawing.Point(398, 26)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(98, 23)
         Me.btnBuscar.TabIndex = 128
@@ -226,7 +215,6 @@ Partial Class FormInscripcion
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.btnAlta)
-        Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txt_fecha)
@@ -249,7 +237,6 @@ Partial Class FormInscripcion
 
     Friend WithEvents btnBaja As Button
     Friend WithEvents btnAlta As Button
-    Friend WithEvents BtnNuevo As Button
     Friend WithEvents btnBuscar As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents txt_fecha As MaskedTextBox_01
