@@ -38,21 +38,28 @@
 
 
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
-
+        Dim tabla As New DataTable
+        tabla = BD.leo_tabla("SELECT id_club FROM Inscripcion WHERE id_club = " & cmb_club.SelectedValue)
         If txt_fecha.Text < txt_fecha_cierre.Text Then
             If Me.inscrip.transferir(Me, inscripcion.a_donde.a_la_clase) = inscripcion.estado_transferencia.datosErroneos Then
                 Exit Sub
             End If
             If control_estado_grabacion = estado_grabacion.insertar Then
-                'Se dispara en el objeto negocio (usuarios) el método de insertar datos
-                Me.inscrip.insertar()
-                MsgBox("Se grabó exitosamente")
-                'se recarga la grilla
-                Me.cargar_grilla()
+                If tabla.Rows.Count = 0 Then
+                    'Se dispara en el objeto negocio (usuarios) el método de insertar datos
+                    Me.inscrip.insertar()
+                    MsgBox("Se grabó exitosamente")
+                    'se recarga la grilla
+                    Me.cargar_grilla()
 
-                Me.cmb_club.Focus()
+                    Me.cmb_club.Focus()
+                Else
+                    MsgBox("El club " & cmb_club.Text & " ya esta inscripto")
+                    Exit Sub
+                End If
+
             End If
-        Else
+            Else
             MsgBox("Se termino el periodo de inscripcion")
         End If
 

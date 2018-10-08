@@ -116,6 +116,7 @@
     <Compile Include="Clases\DataGridViewComboBox_01.vb" />
     <Compile Include="Clases\FechasYPartidos.vb" />
     <Compile Include="Clases\inscripcion.vb" />
+    <Compile Include="Clases\JugadorXClubXCampeonato.vb" />
     <Compile Include="Clases\MaskedTextBox_01.Designer.vb">
       <DependentUpon>MaskedTextBox_01.vb</DependentUpon>
     </Compile>

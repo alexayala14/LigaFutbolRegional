@@ -5,7 +5,7 @@
 
     Private Sub cargarGrilla()
         Dim tabla As New DataTable
-        tabla = _BD.leo_tabla("Select dni, nombre from Jugador")
+        tabla = _BD.leo_tabla("Select dni, nombre from Jugador WHERE id_estado = 2")
 
         Dim aux As Integer = tabla.Rows.Count - 1
         Dim valor As Boolean = True
@@ -17,6 +17,26 @@
             End If
         End While
 
+
+    End Sub
+
+    Private Sub cargarGrilla2()
+
+        Dim tabla As New DataTable
+        tabla = _BD.leo_tabla("SELECT dni, nombre , nroCamiseta , posicion_designada FROM Inscripcion I, JugadorXClubXCampeonato A ,Jugador J WHERE A.dni_jugador = J.dni and I.id_club = " & cmb_club.SelectedValue)
+        If tabla.Rows.Count > 0 Then
+            Dim aux As Integer = tabla.Rows.Count - 1
+            Dim valor As Boolean = True
+            While valor
+                Me.DGV1.Rows.Add(tabla.Rows(aux)("dni"), tabla.Rows(aux)("nombre"), tabla.Rows(aux)("nroCamiseta"), tabla.Rows(aux)("posicion_designada"))
+                aux -= 1
+                If (aux = -1) Then
+                    valor = False
+                End If
+            End While
+        Else
+            Exit Sub
+        End If
 
     End Sub
 
@@ -38,6 +58,7 @@
         tabla = _BD.leo_tabla("SELECT * FROM Inscripcion WHERE id_campeonato = " & cmb_campeonato.SelectedValue)
         txt_anio_campeonato.Text = tabla.Rows(0)("anio_campeonato")
         cmb_club.cargar(_BD.leo_tabla("SELECT  C.id_club , nombre_club  FROM ClubFutbol C, Inscripcion I WHERE C.id_club = I.id_club"), "id_club", "nombre_club")
+        cargarGrilla2()
     End Sub
 
 
@@ -80,5 +101,32 @@
 
 
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+
+        Dim tabla As New DataTable
+        tabla = _BD.leo_tabla("Select tipo_doc FROM Jugador WHERE dni = " & DGV1.CurrentRow.Cells(0).Value)
+
+        Dim sql As String = ""
+        sql = "INSERT INTO JugadorXClubXCampeonato (idClub , tipo_doc, dni_jugador , id_campeonato , anio_campeonato, nroCamiseta , posicion_designada) "
+        sql &= "VALUES ( " & cmb_club.SelectedValue & ", " & tabla.Rows(0)("tipo_doc")
+        sql &= " , " & DGV1.CurrentRow.Cells(0).Value & ", " & cmb_campeonato.SelectedValue
+        sql &= ", " & txt_anio_campeonato.Text & ", " & DGV1.CurrentRow.Cells(2).Value
+        sql &= ", " & DGV1.Rows(0).Cells("posicion_designada").Value & " )"
+        _BD.INS_MOD_BOR(sql)
+        sql = "UPDATE Jugador SET id_estado = 1 WHERE dni = " & DGV1.CurrentRow.Cells(0).Value
+        _BD.INS_MOD_BOR(sql)
+    End Sub
+
+    Private Sub cmb_club_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_club.SelectedIndexChanged
+        If cmb_club.SelectedValue.ToString <> "System.Data.DataRowView" Then
+            DGV2.Rows.Clear()
+            DGV1.Rows.Clear()
+            cargarGrilla2()
+            cargarGrilla()
+        End If
+
     End Sub
 End Class

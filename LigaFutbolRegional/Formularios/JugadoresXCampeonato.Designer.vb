@@ -24,10 +24,6 @@ Partial Class JugadoresXCampeonato
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
-        Me.dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nro_camiseta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.posicion_designada = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.DGV2 = New System.Windows.Forms.DataGridView()
         Me.dni2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,6 +43,10 @@ Partial Class JugadoresXCampeonato
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txt_anio_campeonato = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nro_camiseta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.posicion_designada = New LigaFutbolRegional.DataGridViewComboBoxColumn_01()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGV2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JugadorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,28 +61,6 @@ Partial Class JugadoresXCampeonato
         Me.DGV1.Name = "DGV1"
         Me.DGV1.Size = New System.Drawing.Size(407, 235)
         Me.DGV1.TabIndex = 5
-        '
-        'dni
-        '
-        Me.dni.HeaderText = "DNI"
-        Me.dni.Name = "dni"
-        '
-        'nombre
-        '
-        Me.nombre.HeaderText = "Nombre"
-        Me.nombre.Name = "nombre"
-        '
-        'nro_camiseta
-        '
-        Me.nro_camiseta.HeaderText = "Nro Camiseta"
-        Me.nro_camiseta.Name = "nro_camiseta"
-        '
-        'posicion_designada
-        '
-        Me.posicion_designada.HeaderText = "Posicion"
-        Me.posicion_designada.Name = "posicion_designada"
-        Me.posicion_designada.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.posicion_designada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
         'DGV2
         '
@@ -244,6 +222,31 @@ Partial Class JugadoresXCampeonato
         Me.txt_anio_campeonato.TabIndex = 140
         Me.txt_anio_campeonato.validable = False
         '
+        'dni
+        '
+        Me.dni.HeaderText = "DNI"
+        Me.dni.Name = "dni"
+        '
+        'nombre
+        '
+        Me.nombre.HeaderText = "Nombre"
+        Me.nombre.Name = "nombre"
+        '
+        'nro_camiseta
+        '
+        Me.nro_camiseta.HeaderText = "Nro Camiseta"
+        Me.nro_camiseta.Name = "nro_camiseta"
+        '
+        'posicion_designada
+        '
+        Me.posicion_designada.HeaderText = "Posicion"
+        Me.posicion_designada.Name = "posicion_designada"
+        Me.posicion_designada.nombre_campo = Nothing
+        Me.posicion_designada.nombre_tabla = Nothing
+        Me.posicion_designada.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.posicion_designada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.posicion_designada.validable = False
+        '
         'JugadoresXCampeonato
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -291,12 +294,12 @@ Partial Class JugadoresXCampeonato
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
-    Friend WithEvents dni As DataGridViewTextBoxColumn
-    Friend WithEvents nombre As DataGridViewTextBoxColumn
-    Friend WithEvents nro_camiseta As DataGridViewTextBoxColumn
-    Friend WithEvents posicion_designada As DataGridViewComboBoxColumn
     Friend WithEvents cmb_campeonato As ComboBox_01
     Friend WithEvents Label7 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents txt_anio_campeonato As MaskedTextBox_01
+    Friend WithEvents dni As DataGridViewTextBoxColumn
+    Friend WithEvents nombre As DataGridViewTextBoxColumn
+    Friend WithEvents nro_camiseta As DataGridViewTextBoxColumn
+    Friend WithEvents posicion_designada As DataGridViewComboBoxColumn_01
 End Class
