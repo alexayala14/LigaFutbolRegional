@@ -101,7 +101,7 @@ Partial Class FormInscripcion
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(24, 62)
+        Me.Label5.Location = New System.Drawing.Point(73, 62)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(29, 13)
         Me.Label5.TabIndex = 132

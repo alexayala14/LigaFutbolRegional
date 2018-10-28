@@ -25,11 +25,12 @@
         cmb_club.cargar(BD.leo_tabla("SELECT * FROM ClubFutbol"), "id_club", "nombre_club")
         cmb_estado.cargar(BD.leo_tabla("SELECT * FROM EstadoInscripcion"), "id_estado", "descripcion")
         txt_fecha.Text = DateTime.Now.ToString("MM/dd/yyyy")
-        cargar_grilla()
+        cargar_grilla(Me.cmb_campeonato.SelectedValue)
         fecha = tabla(0)("fecha_inicio")
         fecha = Convert.ToDateTime(fecha).AddDays(-1).ToString()
         fecha = Convert.ToDateTime(fecha).ToString("MM/dd/yyyy")
         Me.txt_fecha_cierre.Text = fecha
+
 
 
 
@@ -50,7 +51,7 @@
                     Me.inscrip.insertar()
                     MsgBox("Se grabó exitosamente")
                     'se recarga la grilla
-                    Me.cargar_grilla()
+                    Me.cargar_grilla(Me.cmb_campeonato.SelectedValue)
 
                     Me.cmb_club.Focus()
                 Else
@@ -66,15 +67,26 @@
 
     End Sub
 
-    Private Sub cargar_grilla()
+    Private Sub cargar_grilla(ByVal id_camp As Integer)
 
-        Me.DataGridView1.DataSource = inscrip.lista_inscriptos()
+        Me.DataGridView1.DataSource = inscrip.lista_inscriptos(id_camp)
     End Sub
 
     Private Sub btnBaja_Click(sender As Object, e As EventArgs) Handles btnBaja.Click
+        Dim tabla As DataTable
+        tabla = BD.leo_tabla("SELECT * FROM JugadorXClubXCampeonato WHERE idClub = " & Me.cmb_club.SelectedValue)
+        Dim aux As Integer = tabla.Rows.Count
+
+        If aux > 0 Then
+            BD.INS_MOD_BOR("DELETE FROM JugadorXClubXCampeonato WHERE idClub = " & Me.cmb_club.SelectedValue)
+            For c = 1 To aux - 1
+                BD.INS_MOD_BOR("UPDATE Jugador SET id_estado = 2 WHERE dni = " & tabla.Rows(c)("dni_jugador"))
+            Next
+
+        End If
         Me.inscrip.borrar(cmb_club.SelectedValue())
         'MsgBox("Se elimino exitosamente")
-        Me.cargar_grilla()
+        Me.cargar_grilla(Me.cmb_campeonato.SelectedValue)
         'Me.TE.blanquear_objetos(Me)
         Me.cmb_club.Focus()
 
@@ -86,7 +98,8 @@
         Dim fecha As String
         'MsgBox("Numero campeonato: " & cmb_campeonato.SelectedValue.ToString)
         If cmb_campeonato.SelectedValue.ToString <> "System.Data.DataRowView" Then
-
+            Me.DataGridView1.DataSource = Nothing
+            cargar_grilla(cmb_campeonato.SelectedValue)
             tabla = BD.leo_tabla("SELECT * FROM Campeonato WHERE id_campeonato = " & cmb_campeonato.SelectedValue)
             txt_anio_campeonato.Text = tabla.Rows(0)("anio")
             fecha = tabla(0)("fecha_inicio")
@@ -101,4 +114,6 @@
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         JugadoresXCampeonato.Show()
     End Sub
+
+
 End Class

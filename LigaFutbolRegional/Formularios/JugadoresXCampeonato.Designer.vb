@@ -24,6 +24,10 @@ Partial Class JugadoresXCampeonato
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
+        Me.dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nro_camiseta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.posicion_designada = New LigaFutbolRegional.DataGridViewComboBoxColumn_01()
         Me.DGV2 = New System.Windows.Forms.DataGridView()
         Me.dni2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -43,10 +47,8 @@ Partial Class JugadoresXCampeonato
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txt_anio_campeonato = New LigaFutbolRegional.MaskedTextBox_01()
-        Me.dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nro_camiseta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.posicion_designada = New LigaFutbolRegional.DataGridViewComboBoxColumn_01()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGV2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JugadorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,6 +63,31 @@ Partial Class JugadoresXCampeonato
         Me.DGV1.Name = "DGV1"
         Me.DGV1.Size = New System.Drawing.Size(407, 235)
         Me.DGV1.TabIndex = 5
+        '
+        'dni
+        '
+        Me.dni.HeaderText = "DNI"
+        Me.dni.Name = "dni"
+        '
+        'nombre
+        '
+        Me.nombre.HeaderText = "Nombre"
+        Me.nombre.Name = "nombre"
+        '
+        'nro_camiseta
+        '
+        Me.nro_camiseta.HeaderText = "Nro Camiseta"
+        Me.nro_camiseta.Name = "nro_camiseta"
+        '
+        'posicion_designada
+        '
+        Me.posicion_designada.HeaderText = "Posicion"
+        Me.posicion_designada.Name = "posicion_designada"
+        Me.posicion_designada.nombre_campo = Nothing
+        Me.posicion_designada.nombre_tabla = Nothing
+        Me.posicion_designada.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.posicion_designada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.posicion_designada.validable = False
         '
         'DGV2
         '
@@ -156,7 +183,7 @@ Partial Class JugadoresXCampeonato
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(526, 409)
+        Me.Button2.Location = New System.Drawing.Point(612, 409)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 14
@@ -222,30 +249,23 @@ Partial Class JugadoresXCampeonato
         Me.txt_anio_campeonato.TabIndex = 140
         Me.txt_anio_campeonato.validable = False
         '
-        'dni
+        'Button4
         '
-        Me.dni.HeaderText = "DNI"
-        Me.dni.Name = "dni"
+        Me.Button4.Location = New System.Drawing.Point(12, 409)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 141
+        Me.Button4.Text = "Iniciar"
+        Me.Button4.UseVisualStyleBackColor = True
         '
-        'nombre
+        'Button5
         '
-        Me.nombre.HeaderText = "Nombre"
-        Me.nombre.Name = "nombre"
-        '
-        'nro_camiseta
-        '
-        Me.nro_camiseta.HeaderText = "Nro Camiseta"
-        Me.nro_camiseta.Name = "nro_camiseta"
-        '
-        'posicion_designada
-        '
-        Me.posicion_designada.HeaderText = "Posicion"
-        Me.posicion_designada.Name = "posicion_designada"
-        Me.posicion_designada.nombre_campo = Nothing
-        Me.posicion_designada.nombre_tabla = Nothing
-        Me.posicion_designada.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.posicion_designada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.posicion_designada.validable = False
+        Me.Button5.Location = New System.Drawing.Point(503, 409)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.TabIndex = 142
+        Me.Button5.Text = "Finalizar"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'JugadoresXCampeonato
         '
@@ -253,6 +273,8 @@ Partial Class JugadoresXCampeonato
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightSeaGreen
         Me.ClientSize = New System.Drawing.Size(704, 462)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.txt_anio_campeonato)
         Me.Controls.Add(Me.cmb_campeonato)
         Me.Controls.Add(Me.Label7)
@@ -302,4 +324,6 @@ Partial Class JugadoresXCampeonato
     Friend WithEvents nombre As DataGridViewTextBoxColumn
     Friend WithEvents nro_camiseta As DataGridViewTextBoxColumn
     Friend WithEvents posicion_designada As DataGridViewComboBoxColumn_01
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
 End Class

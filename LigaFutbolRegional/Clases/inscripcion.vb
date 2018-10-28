@@ -151,8 +151,8 @@
         Me._BD.INS_MOD_BOR(sql)
     End Sub
 
-    Public Function lista_inscriptos() As DataTable
+    Public Function lista_inscriptos(ByVal id_campe As Integer) As DataTable
         'Se utiliza el objeto _BD (instancia CONEXION_DB), la función leo tabla que devuelve un DataTable
-        Return _BD.leo_tabla("SELECT * FROM Inscripcion")
+        Return _BD.leo_tabla("SELECT * FROM Inscripcion WHERE id_campeonato = " & id_campe)
     End Function
 End Class

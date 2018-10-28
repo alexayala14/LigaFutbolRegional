@@ -113,6 +113,7 @@
     <Compile Include="Clases\ComboBox_01.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Clases\CONEXION_BD_01.vb" />
     <Compile Include="Clases\DataGridViewComboBox_01.vb" />
     <Compile Include="Clases\FechasYPartidos.vb" />
     <Compile Include="Clases\inscripcion.vb" />
@@ -130,6 +131,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Estadisticas.Designer.vb">
+      <DependentUpon>Estadisticas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Estadisticas.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Arbitro\FormActualizarArbitro.Designer.vb">
       <DependentUpon>FormActualizarArbitro.vb</DependentUpon>
@@ -222,6 +229,12 @@
     <Compile Include="Formularios\Club\FormClubes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\From_Jornada.Designer.vb">
+      <DependentUpon>From_Jornada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\From_Jornada.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Jugador\FormActualizarJugador.Designer.vb">
       <DependentUpon>FormActualizarJugador.vb</DependentUpon>
     </Compile>
@@ -288,6 +301,24 @@
     <Compile Include="Formularios\JugadoresXCampeonato.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Partidos.Designer.vb">
+      <DependentUpon>Partidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Partidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ResultadoPartido.Designer.vb">
+      <DependentUpon>ResultadoPartido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ResultadoPartido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\Reportes.Designer.vb">
+      <DependentUpon>Reportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\Reportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -303,12 +334,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Reportes\Reportes.Designer.vb">
-      <DependentUpon>Reportes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Reportes.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="SplashScreen1.Designer.vb">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </Compile>
@@ -317,6 +342,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Estadisticas\Estadisticas.resx">
+      <DependentUpon>Estadisticas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\grafico1.rdlc" />
+    <EmbeddedResource Include="Estadisticas\grafico2.rdlc" />
+    <EmbeddedResource Include="Estadisticas\grafico3.rdlc" />
+    <EmbeddedResource Include="Estadisticas\grafico4.rdlc" />
     <EmbeddedResource Include="Formularios\Arbitro\FormActualizarArbitro.resx">
       <DependentUpon>FormActualizarArbitro.vb</DependentUpon>
     </EmbeddedResource>
@@ -359,6 +391,9 @@
     <EmbeddedResource Include="Formularios\Club\FormClubes.resx">
       <DependentUpon>FormClubes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\From_Jornada.resx">
+      <DependentUpon>From_Jornada.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Jugador\FormActualizarJugador.resx">
       <DependentUpon>FormActualizarJugador.vb</DependentUpon>
     </EmbeddedResource>
@@ -395,15 +430,24 @@
     <EmbeddedResource Include="Formularios\JugadoresXCampeonato.resx">
       <DependentUpon>JugadoresXCampeonato.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Partidos.resx">
+      <DependentUpon>Partidos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ResultadoPartido.resx">
+      <DependentUpon>ResultadoPartido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\Report1.rdlc" />
+    <EmbeddedResource Include="Listados\Report2.rdlc" />
+    <EmbeddedResource Include="Listados\Report3.rdlc" />
+    <EmbeddedResource Include="Listados\Report4.rdlc" />
+    <EmbeddedResource Include="Listados\Reportes.resx">
+      <DependentUpon>Reportes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Report1.rdlc" />
-    <EmbeddedResource Include="Reportes\Reportes.resx">
-      <DependentUpon>Reportes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen1.resx">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
@@ -425,6 +469,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\LigaFutbolRegional.DataSet1TableAdapters.JugadorTableAdapter.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -460,6 +505,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

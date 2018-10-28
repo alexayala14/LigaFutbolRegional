@@ -1,7 +1,6 @@
 ﻿Public Class JugadoresXCampeonato
     Dim jugadores As New Jugador
-    Dim _BD As New CONEXION_BD
-
+    Dim _BD As New CONEXION_BD_01
 
     Private Sub cargarGrilla()
         Dim tabla As New DataTable
@@ -23,7 +22,7 @@
     Private Sub cargarGrilla2()
 
         Dim tabla As New DataTable
-        tabla = _BD.leo_tabla("SELECT dni, nombre , nroCamiseta , posicion_designada FROM Inscripcion I, JugadorXClubXCampeonato A ,Jugador J WHERE A.dni_jugador = J.dni and I.id_club = " & cmb_club.SelectedValue)
+        tabla = _BD.leo_tabla("SELECT dni, nombre , nroCamiseta , posicion_designada FROM  JugadorXClubXCampeonato A ,Jugador J WHERE A.dni_jugador = J.dni and A.idClub =  " & cmb_club.SelectedValue)
         If tabla.Rows.Count > 0 Then
             Dim aux As Integer = tabla.Rows.Count - 1
             Dim valor As Boolean = True
@@ -58,7 +57,7 @@
         tabla = _BD.leo_tabla("SELECT * FROM Inscripcion WHERE id_campeonato = " & cmb_campeonato.SelectedValue)
         txt_anio_campeonato.Text = tabla.Rows(0)("anio_campeonato")
         cmb_club.cargar(_BD.leo_tabla("SELECT  C.id_club , nombre_club  FROM ClubFutbol C, Inscripcion I WHERE C.id_club = I.id_club"), "id_club", "nombre_club")
-        cargarGrilla2()
+        'cargarGrilla2()
     End Sub
 
 
@@ -97,7 +96,7 @@
 
             tabla = _BD.leo_tabla("SELECT * FROM Inscripcion WHERE id_campeonato = " & cmb_campeonato.SelectedValue)
             txt_anio_campeonato.Text = tabla.Rows(0)("anio_campeonato")
-
+            cmb_club.cargar(_BD.leo_tabla("SELECT  C.id_club , nombre_club  FROM ClubFutbol C, Inscripcion I WHERE C.id_club = I.id_club and I.id_campeonato = " & cmb_campeonato.SelectedValue), "id_club", "nombre_club")
 
 
         End If
@@ -105,19 +104,22 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-
+        Dim aux As Integer = DGV1.Rows.Count()
         Dim tabla As New DataTable
-        tabla = _BD.leo_tabla("Select tipo_doc FROM Jugador WHERE dni = " & DGV1.CurrentRow.Cells(0).Value)
 
-        Dim sql As String = ""
-        sql = "INSERT INTO JugadorXClubXCampeonato (idClub , tipo_doc, dni_jugador , id_campeonato , anio_campeonato, nroCamiseta , posicion_designada) "
-        sql &= "VALUES ( " & cmb_club.SelectedValue & ", " & tabla.Rows(0)("tipo_doc")
-        sql &= " , " & DGV1.CurrentRow.Cells(0).Value & ", " & cmb_campeonato.SelectedValue
-        sql &= ", " & txt_anio_campeonato.Text & ", " & DGV1.CurrentRow.Cells(2).Value
-        sql &= ", " & DGV1.Rows(0).Cells("posicion_designada").Value & " )"
-        _BD.INS_MOD_BOR(sql)
-        sql = "UPDATE Jugador SET id_estado = 1 WHERE dni = " & DGV1.CurrentRow.Cells(0).Value
-        _BD.INS_MOD_BOR(sql)
+        For c = 1 To aux - 2
+            tabla = _BD.leo_tabla("Select tipo_doc FROM Jugador WHERE dni = " & DGV1.Rows(c).Cells(0).Value)
+            Dim sql As String = ""
+            sql = "INSERT INTO JugadorXClubXCampeonato (idClub , tipo_doc, dni_jugador , id_campeonato , anio_campeonato, nroCamiseta , posicion_designada) "
+            sql &= "VALUES ( " & cmb_club.SelectedValue & ", " & tabla.Rows(0)("tipo_doc")
+            sql &= " , " & DGV1.Rows(c).Cells(0).Value & ", " & cmb_campeonato.SelectedValue
+            sql &= ", " & txt_anio_campeonato.Text & ", " & DGV1.Rows(c).Cells(2).Value
+            sql &= ", " & DGV1.Rows(c).Cells("posicion_designada").Value & " )"
+            _BD.INS_MOD_BOR(sql)
+            sql = "UPDATE Jugador SET id_estado = 1 WHERE dni = " & DGV1.Rows(c).Cells(0).Value
+            _BD.INS_MOD_BOR(sql)
+        Next
+
     End Sub
 
     Private Sub cmb_club_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_club.SelectedIndexChanged
@@ -127,6 +129,45 @@
             cargarGrilla2()
             cargarGrilla()
         End If
+        lbl_count.Text = Me.DGV1.Rows.Count - 1
 
+
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim dni As Integer
+        Dim nombre As String
+        Dim tabla As New DataTable
+        Dim sql As String = ""
+        sql = "UPDATE Jugador SET id_estado = 2 WHERE dni = " & DGV1.CurrentRow.Cells(0).Value
+        Me._BD.INS_MOD_BOR(sql)
+        sql = "DELETE FROM JugadorXClubXCampeonato WHERE dni_jugador = " & DGV1.CurrentRow.Cells(0).Value
+        Me._BD.INS_MOD_BOR(sql)
+
+        dni = DGV1(0, DGV1.CurrentRow.Index).Value
+        nombre = DGV1(1, DGV1.CurrentRow.Index).Value
+
+        Me.DGV2.Rows.Add(dni, nombre)
+        If Me.DGV1.Rows.Count - 1 > 0 Then
+            Me.DGV1.Rows.RemoveAt(DGV1.CurrentRow.Index)
+        End If
+
+
+        lbl_count.Text = Me.DGV1.Rows.Count - 1
+
+
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        _BD.iniciar_transaccion()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        _BD.fin_transaccion()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Close()
     End Sub
 End Class

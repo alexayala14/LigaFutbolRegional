@@ -99,6 +99,6 @@
     End Sub
 
     Private Sub btn_reportes_Click(sender As Object, e As EventArgs) Handles btn_reportes.Click
-        FormReportes.Show()
+        'FormReportes.Show()
     End Sub
 End Class
