@@ -85,6 +85,17 @@ Namespace My
                 Return CType(Me("ConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=SQLNCLI11;Data Source=(localdb)\Campeonato;Integrated Security=SSPI;Init"& _ 
+            "ial Catalog=CampeonatoPav")>  _
+        Public ReadOnly Property ConnectionString1() As String
+            Get
+                Return CType(Me("ConnectionString1"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

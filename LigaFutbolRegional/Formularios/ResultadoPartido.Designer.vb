@@ -69,6 +69,7 @@ Partial Class ResultadoPartido
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.txt_tipo_documento = New LigaFutbolRegional.MaskedTextBox_01()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGV2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -505,12 +506,22 @@ Partial Class ResultadoPartido
         Me.txt_tipo_documento.TabIndex = 66
         Me.txt_tipo_documento.validable = False
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(114, 429)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 67
+        Me.Button4.Text = "Ver partidos"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'ResultadoPartido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkCyan
         Me.ClientSize = New System.Drawing.Size(819, 460)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.txt_tipo_documento)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label15)
@@ -606,4 +617,5 @@ Partial Class ResultadoPartido
     Friend WithEvents cant_amarillas As DataGridViewTextBoxColumn
     Friend WithEvents faltas_cometidas As DataGridViewTextBoxColumn
     Friend WithEvents txt_tipo_documento As MaskedTextBox_01
+    Friend WithEvents Button4 As Button
 End Class

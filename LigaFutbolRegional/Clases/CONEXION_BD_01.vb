@@ -14,8 +14,8 @@
     Dim conexion As New OleDb.OleDbConnection
     Dim cmd As New OleDb.OleDbCommand
     Dim transaccion As OleDb.OleDbTransaction
-    'Dim _cadena_conexion As String = "Provider=SQLNCLI11;Data Source=(localdb)\Campeonato;Integrated Security=SSPI;Initial Catalog=CampeonatoPav"
-    Dim _cadena_conexion As String = "Provider=SQLNCLI11;Data Source=DESKTOP-HQ9HGAN;Integrated Security=SSPI;Initial Catalog=CampeonatoPav"
+    Dim _cadena_conexion As String = "Provider=SQLNCLI11;Data Source=(localdb)\Campeonato;Integrated Security=SSPI;Initial Catalog=CampeonatoPav"
+    'Dim _cadena_conexion As String = "Provider=SQLNCLI11;Data Source=DESKTOP-HQ9HGAN;Integrated Security=SSPI;Initial Catalog=CampeonatoPav"
     Public Sub iniciar_transaccion()
         control_conexion = tipo_conexion.transaccion
         control_estado = estado_proceso._ok

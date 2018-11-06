@@ -75,7 +75,7 @@
     End Sub
 
     Private Sub cmdFP_Click(sender As Object, e As EventArgs) Handles cmdFP.Click
-        FormFechasYPartidos.Show()
+        PartidosCargados.Show()
     End Sub
 
     Private Sub cmdRE_Click(sender As Object, e As EventArgs) Handles cmdRE.Click
@@ -99,6 +99,14 @@
     End Sub
 
     Private Sub btn_reportes_Click(sender As Object, e As EventArgs) Handles btn_reportes.Click
-        'FormReportes.Show()
+        Reportes.Show()
+    End Sub
+
+    Private Sub btn_estadisticas_Click(sender As Object, e As EventArgs) Handles btn_estadisticas.Click
+        Estadisticas.Show()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Partidos.Show()
     End Sub
 End Class

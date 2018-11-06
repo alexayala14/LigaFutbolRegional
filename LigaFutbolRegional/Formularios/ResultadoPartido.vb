@@ -41,6 +41,7 @@
         Me.txt_goles_a_favor.Clear()
         Me.txt_goles_en_contra.Clear()
         Me.txt_tipo_documento.Clear()
+        Me.DGV2.Rows.Clear()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -124,5 +125,9 @@
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Me.Close()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        PartidosCargados.Show()
     End Sub
 End Class

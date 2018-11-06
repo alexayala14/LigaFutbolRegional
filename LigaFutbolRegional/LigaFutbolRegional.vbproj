@@ -132,6 +132,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet2.vb">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Estadisticas\Estadisticas.Designer.vb">
       <DependentUpon>Estadisticas.vb</DependentUpon>
     </Compile>
@@ -307,6 +320,12 @@
     <Compile Include="Formularios\Partidos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\PartidosCargados.Designer.vb">
+      <DependentUpon>PartidosCargados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\PartidosCargados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\ResultadoPartido.Designer.vb">
       <DependentUpon>ResultadoPartido.vb</DependentUpon>
     </Compile>
@@ -433,6 +452,9 @@
     <EmbeddedResource Include="Formularios\Partidos.resx">
       <DependentUpon>Partidos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\PartidosCargados.resx">
+      <DependentUpon>PartidosCargados.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ResultadoPartido.resx">
       <DependentUpon>ResultadoPartido.vb</DependentUpon>
     </EmbeddedResource>
@@ -464,6 +486,28 @@
     </None>
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet3.xsc">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet3.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet3.xss">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
